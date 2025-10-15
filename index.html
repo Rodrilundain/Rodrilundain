@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rodrigo Ilundain — CV / Portafolio</title>
+  <style>
+    /* ===============================
+       🎨 Estilos base
+    ================================ */
+    :root{
+      --bg:#0a0f1a;
+      --card:#101626;
+      --accent:#00ffd1;
+      --muted:#8b9cb0;
+      --glass: rgba(255,255,255,0.03);
+      --shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    *{box-sizing:border-box;font-family:"JetBrains Mono", "Inter", monospace;color:#e6eef8;scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:linear-gradient(120deg,#061122,#0c1a33,#061122);
+      background-size:400% 400%;
+      animation:bgMove 16s ease infinite;
+      min-height:100vh;
+      padding:32px;
+    }
+    @keyframes bgMove{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+    .wrap{max-width:1000px;margin:0 auto;}
+
+    /* ===============================
+       🧑‍💼 Header principal
+    ================================ */
+    header.hero{
+      display:flex;gap:24px;align-items:center;padding:28px;
+      border-radius:16px;
+      background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+      box-shadow: var(--shadow);
+      transition: transform .6s cubic-bezier(.2,.9,.3,1);
+      backdrop-filter: blur(6px);
+    }
+    header.hero:hover{transform:translateY(-4px);}
+    .hero-left{flex:1}
+    h1{margin:0;font-size:30px;letter-spacing:0.4px}
+    .subtitle{color:var(--muted);margin-top:6px;font-size:15px}
+    .tags{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    .tag{
+      background:var(--glass);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      transition:all .3s ease;
+    }
+    .tag:hover{background:rgba(0,255,209,0.12);color:#00ffd1;transform:translateY(-2px);}
+    .hero-right{width:220px;text-align:center}
+    .avatar{
+      width:120px;height:120px;border-radius:16px;
+      background:url("img/img4.jpeg") center/cover no-repeat;
+      display:inline-block;
+      box-shadow:0 0 20px rgba(0,255,209,0.3);
+      border:2px solid rgba(0,255,209,0.2);
+      animation:float 6s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0) rotate(-4deg);}
+      50%{transform:translateY(-6px) rotate(2deg);}
+    }
+    .contact{margin-top:12px;font-size:14px;color:var(--muted)}
+
+    /* ===============================
+       🗂️ Contenedores generales
+    ================================ */
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));
+      padding:18px;border-radius:12px;
+      box-shadow:var(--shadow);
+      position:relative;overflow:hidden;
+    }
+    .card h3{margin:0 0 12px 0;font-size:18px}
+    .card:before{
+      content:"";
+      position:absolute;top:-40%;left:-40%;
+      width:200%;height:200%;
+      background:radial-gradient(circle at 50% 50%,rgba(0,255,209,0.05),transparent 60%);
+      transform:rotate(45deg);
+      animation:shine 12s linear infinite;
+    }
+    @keyframes shine{
+      0%{transform:rotate(0deg);}
+      100%{transform:rotate(360deg);}
+    }
+
+    /* ===============================
+       📅 Timeline profesional
+    ================================ */
+    .timeline{list-style:none;padding:0;margin:0;position:relative}
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:10px;
+      top:0;
+      bottom:0;
+      width:2px;
+      background:rgba(255,255,255,0.06);
+    }
+    .timeline li{
+      position:relative;
+      padding-left:32px;
+      margin-bottom:18px;
+    }
+    .timeline li:before{
+      content:"";
+      position:absolute;
+      left:4px;
+      top:6px;
+      width:12px;
+      height:12px;
+      background:var(--accent);
+      border-radius:50%;
+      box-shadow:0 0 8px rgba(0,255,209,0.8);
+      animation:pulse 2.8s infinite ease-in-out;
+    }
+    @keyframes pulse{
+      0%,100%{transform:scale(1);opacity:1;}
+      50%{transform:scale(1.4);opacity:0.6;}
+    }
+
+    /* ===============================
+       📊 Skills con animación
+    ================================ */
+    .skill{margin-bottom:14px}
+    .bar{width:100%;height:12px;background:rgba(255,255,255,0.08);border-radius:999px;overflow:hidden}
+    .bar > i{
+      display:block;height:100%;border-radius:999px;
+      background:linear-gradient(90deg,var(--accent),#3cfdfd);
+      width:0%;
+      animation:fillBar 1.6s forwards;
+    }
+    @keyframes fillBar{to{width:var(--w)}}
+
+    /* ===============================
+       🧭 Animaciones varias
+    ================================ */
+    a{text-decoration:none;color:var(--accent);transition:color .3s}
+    a:hover{color:#7fffe6;}
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px;opacity:0.8}
+
+    /* Responsive */
+    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero card" aria-label="Hero">
+      <div class="hero-left">
+        <h1>Rodrigo Ilundain</h1>
+        <div class="subtitle">Coordinador de Contact Center · Programación Jr. · Estratega Digital</div>
+        <div class="tags" aria-hidden="true">
+          <span class="tag">CRM</span>
+          <span class="tag">Automatización</span>
+          <span class="tag">App Script</span>
+          <span class="tag">Zapier</span>
+          <span class="tag">Reporting</span>
+          <span class="tag">HTML/CSS/JS</span>
+          <span class="tag">Python (Data)</span>
+        </div>
+        <p style="color:var(--muted);margin-top:14px;line-height:1.6">
+          Profesional con perfil híbrido entre coordinación operativa y desarrollo tecnológico.  
+          Diseño e implemento soluciones digitales internas que optimizan procesos comerciales, flujos de datos y gestión humana.
+        </p>
+        <div style="margin-top:12px">
+          <a href="mailto:rodrilundain@gmail.com">✉️ Contactar</a> ·
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="avatar" title="Rodrigo Ilundain"></div>
+        <div class="contact">Montevideo · Cel: 091 318 211<br/>rodrilundain@gmail.com</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h3>Experiencia</h3>
+        <ul class="timeline">
+          <li>
+            <strong>Coordinador & Desarrollador Interno — Grupo FIANCAR</strong><br/>
+            <small>Julio 2024 — presente</small>
+            <p style="color:var(--muted);margin-top:6px">
+              Desarrollo e implementación de soluciones con <strong>Google App Script</strong> y automatismos en <strong>Zapier</strong> 
+              para conectar sistemas internos, optimizar comunicación y eliminar tareas repetitivas.
+            </p>
+            <ul style="color:var(--muted);margin-top:6px;padding-left:18px;list-style:disc">
+              <li>Sistema web de <strong>tickets</strong> y seguimiento de reclamos.</li>
+              <li>Automatización de solicitudes de <strong>adelantos, licencias y reportería</strong>.</li>
+              <li>Alertas automáticas de <strong>altas/bajas</strong> y asignación dinámica de tareas según disponibilidad.</li>
+              <li>Integraciones de formularios y CRM vía <strong>Zapier</strong> para flujos sin fricción.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>AVANZA — Coordinador de Estrategia Digital</strong><br/>
+            <small>Jun 2017 — Jul 2024</small>
+            <p style="color:var(--muted);margin-top:6px">Gestión de campañas, CRM, control de ventas y supervisión de equipos. Desarrollo de herramientas para optimizar la atención y los reportes del contact center.</p>
+          </li>
+          <li>
+            <strong>PeposFood — Coordinación</strong><br/>
+            <small>Feb 2019 — Dic 2022</small>
+          </li>
+        </ul>
+
+        <h3 style="margin-top:16px">Habilidades</h3>
+        <div class="skill" style="--w:85%">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span>CRM & Gestión comercial</span><span style="color:var(--muted)">85%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill" style="--w:80%">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span>App Script & Zapier</span><span style="color:var(--muted)">80%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill" style="--w:72%">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span>Reporting & Analytics</span><span style="color:var(--muted)">72%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill" style="--w:60%">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span>HTML / CSS / JS</span><span style="color:var(--muted)">60%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+
+        <h3 style="margin-top:16px">Formación & Cursos</h3>
+        <ul style="color:var(--muted);margin:6px 0 0;padding-left:16px">
+          <li>Instituto EGG — HTML, CSS, JavaScript (Nov 2024)</li>
+          <li>Academia Latam — Python para análisis de datos (Nov 2024)</li>
+          <li>Inefop — Inteligencia Artificial para la Productividad (Oct 2024)</li>
+          <li>Fundación Telefónica — Marketing Digital, Power BI, Ciberseguridad (2023)</li>
+        </ul>
+      </section>
+
+      <aside class="card">
+        <h3>Contacto & Referencias</h3>
+        <p style="color:var(--muted);margin:0 0 12px">
+          rodrilundain@gmail.com<br/>Cel: 091 318 211<br/>Av. Gral Rivera 3012, Pocitos — Montevideo
+        </p>
+
+        <h3 style="margin-top:12px">Freelance & Webs</h3>
+        <ul style="color:var(--muted);padding-left:16px">
+          <li><a href="https://gluglupludemascotas.wixsite.com/glu-glu-peluqueria-d" target="_blank">GLU GLU — Peluquería</a></li>
+          <li><a href="https://delivermana.wixsite.com/deriverman" target="_blank">DELIVERMAN — Cadetería</a></li>
+          <li><a href="https://amarlohandmade.wixsite.com/amarlo" target="_blank">AMARLO Handmade</a></li>
+        </ul>
+
+        <h3 style="margin-top:14px">Referencias</h3>
+        <p style="color:var(--muted);margin:0">
+          Lorenzo Barneche — Grupo FIANCAR (Gerente Marketing) · Cel: 098 143 528<br/>
+          Jose Gassire — Supervisor AVANZA · Cel: 098 943 822
+        </p>
+      </aside>
+    </div>
+
+    <footer>
+      <small>© Rodrigo Ilundain · 2025 · Innovación y Automatización con App Script & Zapier</small>
+    </footer>
+  </div>
+</body>
+</html>
