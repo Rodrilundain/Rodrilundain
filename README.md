@@ -7,8 +7,8 @@
   <a href="mailto:rodrilundain@gmail.com">📧 rodrilundain@gmail.com</a> · 
   <strong>Cel:</strong> 091 318 211 · 
   Pocitos, Montevideo · 
-  <a href="https://www.linkedin.com/in/rodrigo-ilundain">LinkedIn</a>
-  <a https://rodrilundain.github.io/Rodrilundain/>Personal</a>
+  <a href="www.linkedin.com/in/rodrigo-ilundain-122896b5">LinkedIn</a>
+  <a href= "https://rodrilundain.github.io/Rodrilundain/">Personal</a>
 </p>
 
 ---
