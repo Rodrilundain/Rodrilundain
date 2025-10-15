@@ -8,6 +8,7 @@
   <strong>Cel:</strong> 091 318 211 · 
   Pocitos, Montevideo · 
   <a href="https://www.linkedin.com/in/rodrigo-ilundain">LinkedIn</a>
+  <a https://rodrilundain.github.io/Rodrilundain/>Personal</a>
 </p>
 
 ---
