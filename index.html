@@ -67,7 +67,22 @@
     footer{text-align:center;margin-top:20px;color:var(--muted);font-size:13px}
 
     .code-canvas{position:fixed;inset:0;z-index:0;opacity:.17;pointer-events:none;}
-  </style>
+      /* Responsive refinements */
+    @media (max-width: 960px){
+      header.hero{flex-direction:column; align-items:stretch}
+      .grid{grid-template-columns:1fr}
+      .hero-right{order: -1}
+      .quick{flex-wrap:wrap}
+    }
+    @media (max-width: 520px){
+      .wrap{padding:20px}
+      .avatar{width:110px;height:110px}
+      .chip{padding:7px 12px}
+    }
+
+    /* Slightly higher visibility for code rain */
+    .code-canvas{opacity:.22}
+</style>
 </head>
 <body>
   <canvas id="codeRain" class="code-canvas"></canvas>
@@ -93,8 +108,9 @@
         <div class="avatar"></div>
         <div class="info">Montevideo · 091 318 211<br>rodrilundain@gmail.com</div>
         <div class="quick">
-          <a class="chip" href="https://www.linkedin.com/in/rodrigo-ilundain" target="_blank">LinkedIn</a>
-          <a class="chip" href="https://github.com/Rodrilundain" target="_blank">GitHub</a>
+          <a class="chip" href="https://www.linkedin.com/in/rodrigo-ilundain" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="chip" href="https://github.com/Rodrilundain" target="_blank" rel="noopener">GitHub</a>
+          <a class="chip" href="https://drive.google.com/file/d/1ofYAi07XMsGUTDwV2XuWyBwfGIw-iPpx/view?usp=sharing" target="_blank" rel="noopener">⬇️ CV</a>
         </div>
       </div>
     </header>
@@ -196,7 +212,7 @@
     (function(){
       const c=document.getElementById('codeRain');const ctx=c.getContext('2d');const chars='01{}[]<>=+-*/&|^%!#@$?;:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';let w,h,fontSize,drops;
       function resize(){w=c.width=innerWidth;h=c.height=innerHeight;fontSize=Math.max(12,Math.floor(w/80));const columns=Math.ceil(w/fontSize);drops=new Array(columns).fill(0);}resize();window.addEventListener('resize',resize);
-      function draw(){ctx.fillStyle='rgba(7,12,22,0.22)';ctx.fillRect(0,0,w,h);ctx.fillStyle='rgba(0,255,209,0.45)';ctx.font=fontSize+'px monospace';drops.forEach((y,i)=>{const text=chars[Math.floor(Math.random()*chars.length)];const x=i*fontSize;ctx.fillText(text,x,y*fontSize);if(y*fontSize>h&&Math.random()>0.975){drops[i]=0;}else{drops[i]=y+1;}});requestAnimationFrame(draw);}draw();})();
+      function draw(){ctx.fillStyle='rgba(7,12,22,0.26)';ctx.fillRect(0,0,w,h);ctx.fillStyle='rgba(0,255,209,0.55)';ctx.font=fontSize+'px monospace';drops.forEach((y,i)=>{const text=chars[Math.floor(Math.random()*chars.length)];const x=i*fontSize;ctx.fillText(text,x,y*fontSize);if(y*fontSize>h&&Math.random()>0.975){drops[i]=0;}else{drops[i]=y+1;}});requestAnimationFrame(draw);}draw();})();
 
     document.getElementById('year').textContent=new Date().getFullYear();
     window.addEventListener('DOMContentLoaded',()=>{
