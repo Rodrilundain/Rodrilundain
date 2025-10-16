@@ -76,7 +76,7 @@ Proactivo y comprometido. Enfoque analítico y detallista, con alta capacidad de
 
 ## Contacto y referencias
 - **Email:** rodrilundain@gmail.com · **Tel:** 091 318 211  
-- Referencias laborales (ej. Jose Gassire 098943822 — AVANZA; Lorenzo Barneche 098143528 — Grupo FIANCAR); Jimena  Bermejo 097964914 — Grupo FIANCAR). Ver CV para teléfonos completos. :contentReference[oaicite:8]{index=8}
+- Referencias laborales (ej. Jose Gassire 098943822 — AVANZA; Lorenzo Barneche 098143528 — Grupo FIANCAR); Jimena  Bermejo 097964914 — Grupo FIANCAR). Ver CV para teléfonos completos. :https://drive.google.com/file/d/1ofYAi07XMsGUTDwV2XuWyBwfGIw-iPpx/view?usp=sharing
 
 ---
 
