@@ -1,268 +1,113 @@
+
+
 <!doctype html>
 <html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rodrigo Ilundain — CV / Portafolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Rodrigo Ilundain — Analista de Datos & Developer</title>
+  <meta name="description" content="Analista de Datos, Developer y Especialista en CRM. Automatización, Apps Script, Python y soluciones digitales.">
+  <meta property="og:title" content="Rodrigo Ilundain — Analista de Datos & Developer"/>
+  <meta property="og:description" content="Analista de Datos, Developer y Especialista en CRM."/>
+  <meta property="og:image" content="link_a_imagen.jpg"/> <!-- Cambia a tu imagen -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #070c16;
-      --bg-soft: #0b1220;
-      --card: #0f172a;
-      --text: #e6eef8;
-      --muted:#9fb0c9;
-      --accent:#00ffd1;
-      --accent-2:#3cfdfd;
-      --glass: rgba(255,255,255,.04);
-      --shadow: 0 10px 30px rgba(0,0,0,.45);
-      --outline: 1px solid rgba(255,255,255,.08);
-      --radius: 14px;
+    /* Coloca aquí tu CSS */
+    :root {
+      --bg: #0a0e1a;
+      --bg-soft: #0f1420;
+      --card: #141827;
+      --text: #e8eef7;
+      --muted: #9ca9c4;
+      --accent: #00d9ff;
+      --accent-dark: #0099cc;
+      --accent-glow: rgba(0, 217, 255, 0.15);
+      --border: rgba(255,255,255,.06);
+      --glass: rgba(255,255,255,.02);
+      --glass-hover: rgba(255,255,255,.05);
+      --shadow: 0 4px 20px rgba(0,0,0,.3);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
+      --radius: 12px;
     }
+    /* Resto de tus estilos CSS */
 
-    body{
-      margin:0;
-      background:linear-gradient(120deg,#071018,#0b1524,#071018);
-      color:var(--text);
-      font-family:'Inter',sans-serif;
-      overflow-x:hidden;
-    }
-
-    .wrap{max-width:1000px;margin:auto;padding:32px;position:relative;z-index:2}
-    h1,h2,h3{margin:0 0 12px 0;color:var(--accent)}
-    a{text-decoration:none;color:var(--accent)}
-
-    header.hero{
-      display:flex;align-items:center;justify-content:space-between;gap:24px;
-      background:var(--glass);
-      border:var(--outline);
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:var(--shadow);
-    }
-    .hero-right{text-align:center}
-    .avatar{width:140px;height:140px;border-radius:16px;background:url("img/img4.jpeg")center/cover;border:2px solid rgba(0,255,209,0.3);box-shadow:0 0 25px rgba(0,255,209,0.4);}
-    .info{margin-top:12px;color:var(--muted)}
-    .quick{display:flex;gap:10px;justify-content:center;margin-top:10px}
-    .chip{background:var(--glass);padding:8px 14px;border-radius:999px;color:var(--text);border:var(--outline);}
-    .chip:hover{background:rgba(0,255,209,0.15)}
-
-    .grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px;margin-top:24px}
-    .card{background:var(--glass);border:var(--outline);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-
-    .timeline{list-style:none;padding:0;margin:0}
-    .timeline li{margin-bottom:16px;position:relative;padding-left:20px}
-    .timeline li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--accent);border-radius:50%}
-
-    /* Habilidades con porcentaje a la derecha */
-    .skills{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-    .skill{background:rgba(255,255,255,.05);border-radius:10px;padding:10px;position:relative;}
-    .skill .bar{height:8px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;margin-top:6px}
-    .skill .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 1.5s ease}
-    .skill .pct{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--accent);font-weight:bold;}
-
-    .projects{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-    .project{background:var(--glass);border:var(--outline);border-radius:12px;padding:12px;text-decoration:none;color:var(--text)}
-    .project:hover{background:rgba(0,255,209,.08)}
-    .project h4{margin:0 0 4px 0;color:var(--accent)}
-    .project p{margin:0;font-size:14px;color:var(--muted)}
-
-    footer{text-align:center;margin-top:20px;color:var(--muted);font-size:13px}
-
-    .code-canvas{position:fixed;inset:0;z-index:0;opacity:.22;pointer-events:none;}
-
-    @media (max-width: 960px){
-      header.hero{flex-direction:column; align-items:stretch}
-      .grid{grid-template-columns:1fr}
-      .hero-right{order: -1}
-      .quick{flex-wrap:wrap}
-    }
-    @media (max-width: 520px){
-      .wrap{padding:20px}
-      .avatar{width:110px;height:110px}
-      .chip{padding:7px 12px}
-    }
   </style>
 </head>
 <body>
+  <div class="scroll-indicator" id="scrollIndicator"></div>
   <canvas id="codeRain" class="code-canvas"></canvas>
+
   <div class="wrap">
     <header class="hero">
-      <div class="hero-left">
+      <div class="hero-content">
         <h1>Rodrigo Ilundain</h1>
-        <p>Coordinador de Contact Center · Programador Jr. · Estratega Digital</p>
-        <div class="tags" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
-          <span class="chip">CRM</span>
-          <span class="chip">Automatización</span>
-          <span class="chip">App Script</span>
-          <span class="chip">Zapier</span>
-          <span class="chip">Reporting</span>
-          <span class="chip">HTML/CSS/JS</span>
-          <span class="chip">Python (Data)</span>
+        <p class="hero-title">Analista de Datos · Developer · Especialista en CRM & Automatización</p>
+        <div class="tags">
+          <span class="tag">Data Analysis</span>
+          <span class="tag">Python</span>
+          <span class="tag">CRM Development</span>
+          <span class="tag">Google Apps Script</span>
+          <span class="tag">Zapier</span>
+          <span class="tag">N8N</span>
+          <span class="tag">APIs Integration</span>
+          <span class="tag">Meta Ads</span>
+          <span class="tag">HTML/CSS/JS</span>
         </div>
-        <p style="margin-top:14px;color:var(--muted)">
-          Profesional con perfil híbrido entre coordinación operativa y desarrollo tecnológico. Diseño e implemento soluciones digitales internas que optimizan procesos comerciales, flujos de datos y gestión humana.
+        <p class="hero-description">
+          Profesional especializado en análisis de datos y desarrollo de soluciones tecnológicas. 
+          Experiencia en automatización de procesos empresariales, integración de sistemas CRM y 
+          desarrollo de dashboards analíticos que transforman datos en decisiones estratégicas.
         </p>
       </div>
-      <div class="hero-right">
+      <div class="hero-aside">
         <div class="avatar"></div>
-        <div class="info">Montevideo · 091 318 211<br>rodrilundain@gmail.com</div>
-        <div class="quick">
-          <a class="chip" href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="chip" href="https://github.com/Rodrilundain" target="_blank" rel="noopener">GitHub</a>
-          <a class="chip" href="https://drive.google.com/file/d/1fGtMj02-zG34FJdMjruqIwM78bkIyY_h/view?usp=sharing" target="_blank" rel="noopener">⬇️ CV</a>
+        <div class="contact-info">
+          📍 Montevideo, Uruguay<br>
+          📱 091 318 211<br>
+          📧 rodrilundain@gmail.com
+        </div>
+        <div class="hero-links">
+          <a class="btn" href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/Rodrilundain" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-primary" href="https://drive.google.com/file/d/1fGtMj02-zG34FJdMjruqIwM78bkIyY_h/view?usp=sharing" target="_blank" rel="noopener">Descargar CV</a>
         </div>
       </div>
     </header>
 
-    <div class="grid">
+    <main class="grid">
       <section class="card">
-        <h2>Experiencia</h2>
+        <h2>💼 Experiencia Profesional</h2>
         <ul class="timeline">
-          <li>
-            <strong>Grupo FIANCAR — Coordinador & Desarrollador Interno</strong><br>
-            <small>Jul 2024 — Actualidad</small>
-            <p>Desarrollo e implementación de soluciones con Google Apps Script y automatismos en Zapier para conectar sistemas internos, optimizar comunicación y eliminar tareas repetitivas.</p>
-            <ul style="color:var(--muted);margin-top:6px;padding-left:18px;list-style:disc">
-              <li>Implementación de sistema web de <strong>tickets</strong> que redujo un 30 % el tiempo de resolución de reclamos.</li>
-              <li>Automatización de solicitudes de <strong>adelantos, licencias y reportería</strong> con más de <strong>500 interacciones mensuales</strong>.</li>
-              <li>Alertas automáticas de <strong>altas/bajas</strong> y asignación dinámica de tareas, aumentando la eficiencia operativa en un <strong>25 %</strong>.</li>
-              <li>Integraciones de formularios y CRM vía <strong>Zapier</strong> para flujos sin fricción entre departamentos.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>AVANZA — Coordinador de Estrategia Digital</strong><br>
-            <small>Jun 2017 — Jul 2024</small>
-            <p style="color:var(--muted);margin-top:6px">Gestión de campañas, CRM, control de ventas y supervisión de equipos. Desarrollo de herramientas para optimizar la atención y los reportes del contact center, logrando un <strong>incremento del 40 % en la productividad</strong>.</p>
-          </li>
-          <li>
-            <strong>PeposFood — Coordinación</strong><br>
-            <small>Feb 2019 — Dic 2022</small>
-            <p style="color:var(--muted);margin-top:6px">Coordinación operativa y diseño de procesos para atención al cliente y logística.</p>
-          </li>
+          <!-- Tu contenido de experiencia -->
         </ul>
-
-        <h3>Habilidades</h3>
+        <h2>🎯 Habilidades Técnicas</h2>
         <div class="skills">
-          <div class="skill" data-pct="85">
-            <div>CRM & Gestión Comercial</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">85%</span>
-          </div>
-          <div class="skill" data-pct="80">
-            <div>Apps Script & Zapier</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">80%</span>
-          </div>
-          <div class="skill" data-pct="72">
-            <div>Reporting & Analytics</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">72%</span>
-          </div>
-          <div class="skill" data-pct="60">
-            <div>HTML / CSS / JS</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">60%</span>
-          </div>
+          <!-- Tus habilidades -->
         </div>
-
-        <h3>Proyectos Destacados</h3>
+        <h2>🚀 Proyectos Destacados</h2>
         <div class="projects">
-          <a class="project" href="#" target="_blank">
-            <h4>Gestor de Reclamos (GAS)</h4>
-            <p>Panel interno con seguimiento y alertas automáticas, reduciendo tiempos de respuesta en un 35 %.</p>
-          </a>
-          <a class="project" href="#" target="_blank">
-            <h4>Asignación Automática de Tareas</h4>
-            <p>Distribución inteligente AM/PM según disponibilidad, mejorando la cobertura operativa diaria.</p>
-          </a>
-          <a class="project" href="#" target="_blank">
-            <h4>Gestor de Solicitudes (Licencias & Adelantos)</h4>
-            <p>Flujo completo con validaciones, registro y notificaciones en tiempo real.</p>
-          </a>
-          <a class="project" href="https://gluglupludemascotas.wixsite.com/glu-glu-peluqueria-d" target="_blank">
-            <h4>GLU GLU — Peluquería</h4>
-            <p>Sistema de reservas y reportería automatizada para gestión de turnos.</p>
-          </a>
+          <!-- Tus proyectos -->
         </div>
       </section>
 
-      <aside class="card" style="text-align:center">
-        <h2>Freelance & Webs</h2>
-        <ul class="list" style="list-style:none;padding:0;margin:10px 0">
-          <li><a href="https://gluglupludemascotas.wixsite.com/glu-glu-peluqueria-d" target="_blank">GLU GLU — Peluquería</a></li>
-          <li><a href="https://delivermana.wixsite.com/deriverman" target="_blank">DeliverMan — Cadetería</a></li>
-          <li><a href="https://amarlohandmade.wixsite.com/amarlo" target="_blank">Amarlo Handmade</a></li>
-        </ul>
-
-        <h2>Referencias</h2>
-        <p>Lorenzo Barneche — Grupo FIANCAR ·098143528 <br> Jimena Bermejo - Grupo FIANCAR . 097964914 <br>Jose Gassire — AVANZA · 098943822</p>
-
-        <h2>Formación & Cursos</h2>
-        <ul style="list-style:none;padding:0;margin:10px 0;color:var(--muted)">
-          <li>Instituto EGG — HTML, CSS, JavaScript (2024)</li>
-          <li>Academia Latam — Python (Data) (2024)</li>
-          <li>INEFOP — IA para la Productividad (2024)</li>
-          <li>Fundación Telefónica — Marketing Digital, Power BI (2023)</li>
-        </ul>
+      <aside class="card">
+        <!-- Tu contenido del aside -->
       </aside>
-    </div>
+    </main>
 
     <footer>
-      © <span id="year"></span> Rodrigo Ilundain · Innovación y Automatización
+      <p>© <span id="year"></span> Rodrigo Ilundain · Analista de Datos & Developer</p>
+      <p style="margin-top: 8px; opacity: 0.7;">Transformando datos en decisiones estratégicas</p>
     </footer>
   </div>
 
+  <script src="tu_script.js" defer></script> <!-- Cambia a tu archivo js externo -->
   <script>
-    // LLUVIA DE CÓDIGO
-    (function(){
-      const c=document.getElementById('codeRain');
-      const ctx=c.getContext('2d');
-      const chars='01{}[]<>=+-*/&|^%!#@$?;:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      let w,h,fontSize,drops;
-      function resize(){
-        w=c.width=innerWidth;
-        h=c.height=innerHeight;
-        fontSize=Math.max(12,Math.floor(w/80));
-        const columns=Math.ceil(w/fontSize);
-        drops=new Array(columns).fill(0);
-      }
-      resize();
-      window.addEventListener('resize',resize);
-      function draw(){
-        ctx.fillStyle='rgba(7,12,22,0.26)';
-        ctx.fillRect(0,0,w,h);
-        ctx.fillStyle='rgba(0,255,209,0.55)';
-        ctx.font=fontSize+'px monospace';
-        drops.forEach((y,i)=>{
-          const text=chars[Math.floor(Math.random()*chars.length)];
-          const x=i*fontSize;
-          ctx.fillText(text,x,y*fontSize);
-          if(y*fontSize>h&&Math.random()>0.975){drops[i]=0;}
-          else{drops[i]=y+1;}
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-
-    // BARRAS DE HABILIDAD CON ANIMACIÓN
-    window.addEventListener('DOMContentLoaded',()=>{
-      document.getElementById('year').textContent=new Date().getFullYear();
-      document.querySelectorAll('.skill').forEach(s=>{
-        const bar = s.querySelector('.bar i');
-        const pct = parseInt(s.getAttribute('data-pct')||'0');
-        if(bar){
-          bar.style.width='0';
-          setTimeout(()=>bar.style.width=pct+'%',200);
-        }
-        const span = s.querySelector('.pct');
-        if(span) span.textContent = pct+'%';
-      });
-    });
+    // Tus scripts
   </script>
 </body>
 </html>
-
-
 
 
