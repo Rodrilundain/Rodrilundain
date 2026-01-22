@@ -9,7 +9,7 @@
   <meta name="description" content="Analista de Datos, Developer y Especialista en CRM. Automatización, Apps Script, Python y soluciones digitales.">
   <meta property="og:title" content="Rodrigo Ilundain — Analista de Datos & Developer"/>
   <meta property="og:description" content="Analista de Datos, Developer y Especialista en CRM."/>
-  <meta property="og:image" content="img/img4-jpeg"/> <!-- Cambia a tu imagen -->
+  <meta property="og:image" content="img/img44jpeg"/> <!-- Cambia a tu imagen -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
