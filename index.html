@@ -18,16 +18,17 @@
       --accent:#00ffd1;
       --accent-2:#3cfdfd;
       --accent-glow: rgba(0, 255, 209, 0.3);
-      --glass: rgba(255,255,255,.04);
-      --glass-hover: rgba(255,255,255,.08);
+      /* FIX: use dark navy glass instead of white-tinted glass */
+      --glass: rgba(10, 18, 35, 0.6);
+      --glass-hover: rgba(10, 18, 35, 0.75);
       --shadow: 0 10px 30px rgba(0,0,0,.45);
       --shadow-lg: 0 20px 60px rgba(0,0,0,.6);
-      --outline: 1px solid rgba(255,255,255,.08);
+      --outline: 1px solid rgba(0, 255, 209, 0.1);
       --radius: 16px;
       --radius-sm: 12px;
     }
 
-    * { box-sizing: border-box; }h
+    * { box-sizing: border-box; }
 
     body{
       margin:0;
@@ -38,18 +39,20 @@
       line-height: 1.6;
     }
 
+    /* FIX: drastically reduced opacity so matrix shows through */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse at top, rgba(0, 255, 209, 0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at bottom right, rgba(60, 253, 253, 0.1) 0%, transparent 50%);
+      background: radial-gradient(ellipse at top, rgba(0, 255, 209, 0.06) 0%, transparent 60%),
+                  radial-gradient(ellipse at bottom right, rgba(60, 253, 253, 0.04) 0%, transparent 50%);
       animation: bgShift 20s ease-in-out infinite;
       z-index: 0;
+      pointer-events: none;
     }
 
     @keyframes bgShift {
-      0%, 100% { opacity: 0.4; }
+      0%, 100% { opacity: 0.5; }
       50% { opacity: 1; }
     }
 
@@ -71,14 +74,13 @@
       border: var(--outline);
       border-radius: var(--radius);
       padding: 40px;
-      backdrop-filter: blur(10px);
+      /* FIX: very light blur so matrix still visible */
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
     }
 
     .hero-left{ flex: 1; }
-
-    .hero-right{
-      flex-shrink: 0;
-    }
+    .hero-right{ flex-shrink: 0; }
 
     .avatar{
       width: 180px;
@@ -160,19 +162,9 @@
       transition: all .2s;
     }
 
-    .btn-primary{
-      background: var(--accent);
-      color: #000;
-    }
-
+    .btn-primary{ background: var(--accent); color: #000; }
     .btn-primary:hover{ background: var(--accent-2); transform: translateY(-2px); }
-
-    .btn-outline{
-      border: 1px solid rgba(255,255,255,.2);
-      color: var(--text);
-      background: transparent;
-    }
-
+    .btn-outline{ border: 1px solid rgba(255,255,255,.2); color: var(--text); background: transparent; }
     .btn-outline:hover{ border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
     /* GRID */
@@ -183,13 +175,14 @@
       align-items: start;
     }
 
-    /* CARD */
+    /* CARD — dark navy, minimal blur */
     .card{
       background: var(--glass);
       border: var(--outline);
       border-radius: var(--radius);
       padding: 32px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
       margin-bottom: 28px;
     }
 
@@ -221,10 +214,8 @@
     .timeline > li::before{
       content: '';
       position: absolute;
-      left: 0;
-      top: 8px;
-      width: 10px;
-      height: 10px;
+      left: 0; top: 8px;
+      width: 10px; height: 10px;
       border-radius: 50%;
       background: var(--accent);
       box-shadow: 0 0 8px var(--accent-glow);
@@ -233,93 +224,34 @@
     .timeline > li::after{
       content: '';
       position: absolute;
-      left: 4px;
-      top: 18px;
-      width: 2px;
-      bottom: -24px;
+      left: 4px; top: 18px;
+      width: 2px; bottom: -24px;
       background: rgba(0,255,209,.15);
     }
 
     .timeline > li:last-child::after{ display: none; }
 
-    .tl-company{
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .tl-role{
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--text);
-      margin: 2px 0;
-    }
-
-    .tl-date{
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .tl-desc{
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
-    .tl-list{
-      padding-left: 16px;
-      margin: 8px 0 0;
-    }
-
-    .tl-list li{
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-      line-height: 1.6;
-    }
-
+    .tl-company{ font-weight: 700; font-size: 1rem; color: var(--accent); text-decoration: none; }
+    .tl-role{ font-weight: 600; font-size: 0.95rem; color: var(--text); margin: 2px 0; }
+    .tl-date{ font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+    .tl-desc{ font-size: 0.9rem; color: var(--muted); margin-bottom: 10px; line-height: 1.7; }
+    .tl-list{ padding-left: 16px; margin: 8px 0 0; }
+    .tl-list li{ font-size: 0.88rem; color: var(--muted); margin-bottom: 6px; line-height: 1.6; }
     .tl-list li strong{ color: var(--accent); }
 
     /* SKILLS */
     .skill-group{ margin-bottom: 20px; }
     .skill-group:last-child{ margin-bottom: 0; }
-    .skill-label{
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.88rem;
-      color: var(--text);
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    .bar{
-      background: rgba(255,255,255,.07);
-      border-radius: 999px;
-      height: 6px;
-      overflow: hidden;
-    }
-
-    .bar i{
-      display: block;
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      animation: grow .8s ease forwards;
-    }
-
+    .skill-label{ display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text); margin-bottom: 6px; font-weight: 500; }
+    .bar{ background: rgba(255,255,255,.07); border-radius: 999px; height: 6px; overflow: hidden; }
+    .bar i{ display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); animation: grow .8s ease forwards; }
     @keyframes grow { from{ width:0 } }
 
     /* PROJECTS */
     .projects{ display: flex; flex-direction: column; gap: 16px; }
 
     .proj{
-      background: var(--glass-hover);
+      background: rgba(10, 18, 35, 0.8);
       border: var(--outline);
       border-radius: var(--radius-sm);
       padding: 20px;
@@ -327,122 +259,42 @@
     }
 
     .proj:hover{ transform: translateY(-3px); border-color: rgba(0,255,209,.3); }
-
-    .proj-title{
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    .proj-desc{
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
+    .proj-title{ font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 6px; }
+    .proj-desc{ font-size: 0.85rem; color: var(--muted); margin-bottom: 10px; line-height: 1.6; }
     .proj-tags{ display: flex; flex-wrap: wrap; gap: 6px; }
-
-    .tag{
-      background: rgba(0,255,209,.08);
-      border: 1px solid rgba(0,255,209,.2);
-      color: var(--accent);
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-weight: 500;
-    }
+    .tag{ background: rgba(0,255,209,.08); border: 1px solid rgba(0,255,209,.2); color: var(--accent); font-size: 0.75rem; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
 
     /* SIDEBAR */
     .quick{ display: flex; flex-direction: column; gap: 20px; }
-
-    .quick-item{
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
-    }
-
-    .quick-icon{
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: rgba(0,255,209,.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
+    .quick-item{ display: flex; align-items: center; gap: 12px; font-size: 0.9rem; }
+    .quick-icon{ width: 36px; height: 36px; border-radius: 10px; background: rgba(0,255,209,.1); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
     .quick-text strong{ display: block; font-size: 0.9rem; color: var(--text); }
     .quick-text span{ font-size: 0.82rem; color: var(--muted); }
 
     /* REFS */
     .ref-list{ display: flex; flex-direction: column; gap: 14px; }
-
-    .ref-item{
-      border-left: 2px solid var(--accent);
-      padding-left: 14px;
-    }
-
+    .ref-item{ border-left: 2px solid var(--accent); padding-left: 14px; }
     .ref-name{ font-weight: 700; font-size: 0.9rem; color: var(--text); }
     .ref-company{ font-size: 0.82rem; color: var(--muted); }
     .ref-phone{ font-size: 0.82rem; color: var(--accent); margin-top: 2px; }
 
     /* CERTS */
     .cert-list{ display: flex; flex-direction: column; gap: 12px; }
-
-    .cert-item{
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .cert-icon{
-      width: 32px;
-      height: 32px;
-      background: rgba(0,255,209,.1);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-
+    .cert-item{ display: flex; gap: 12px; align-items: flex-start; }
+    .cert-icon{ width: 32px; height: 32px; background: rgba(0,255,209,.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
     .cert-title{ font-weight: 600; font-size: 0.88rem; color: var(--text); }
     .cert-org{ font-size: 0.8rem; color: var(--muted); }
 
     /* FREELANCE */
     .freelance-list{ display: flex; flex-direction: column; gap: 10px; }
-    .freelance-item{
-      font-size: 0.88rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .freelance-item{ font-size: 0.88rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
     .freelance-item::before{ content: '🌐'; }
 
     /* FOOTER */
-    footer{
-      text-align: center;
-      padding: 40px 0 20px;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
+    footer{ text-align: center; padding: 40px 0 20px; color: var(--muted); font-size: 0.85rem; }
 
     /* SCROLL INDICATOR */
-    .scroll-indicator{
-      position: fixed;
-      top: 0; left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      z-index: 9999;
-      transition: width .1s;
-    }
+    .scroll-indicator{ position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); z-index: 9999; transition: width .1s; }
 
     /* RESPONSIVE */
     @media (max-width: 900px){
@@ -466,7 +318,7 @@
     ::-webkit-scrollbar { width: 10px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: rgba(0,255,209,.3); border-radius: 999px; }
-    /* MATRIX RAIN */
+
     #matrix-canvas { display: block; }
 
     /* CERT CARDS BIG */
@@ -475,40 +327,31 @@
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      background: var(--card);
+      background: rgba(10, 18, 35, 0.8);
       border: var(--outline);
       border-radius: var(--radius-sm);
       padding: 14px;
       transition: border-color .2s, transform .2s;
       color: var(--text);
     }
-    .cert-card-big:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-    .cert-icon-big {
-      font-size: 1.4rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .cert-card-big:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .cert-icon-big { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
     .cert-card-big strong { color: var(--text); font-size: 0.88rem; display: block; margin-bottom: 4px; }
     .cert-card-big span { color: var(--muted); font-size: 0.78rem; }
-
   </style>
 </head>
 <body>
-  <canvas id="matrix-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:0.13;pointer-events:none;"></canvas>
+  <!-- Matrix opacity bumped slightly for visibility -->
+  <canvas id="matrix-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:0.2;pointer-events:none;"></canvas>
   <div class="scroll-indicator" id="scrollIndicator"></div>
 
   <div class="wrap">
 
-    <!-- HERO -->
     <header class="hero">
       <div class="hero-left">
         <h1>Rodrigo Ilundain</h1>
         <div class="hero-subtitle">Data Analyst &amp; Automation Developer</div>
         <div class="hero-tagline">Convirtiendo procesos manuales en sistemas automatizados que trabajan solos</div>
-
         <div class="chips">
           <span class="chip">n8n</span>
           <span class="chip">Make</span>
@@ -519,33 +362,26 @@
           <span class="chip">Power BI</span>
           <span class="chip">APIs REST</span>
         </div>
-
         <div class="contact-row">
           <span>📍 Montevideo, Uruguay</span>
           <span>📱 091 318 211</span>
           <span>📧 rodrilundain@gmail.com</span>
         </div>
-
         <div class="btn-row">
           <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/" target="_blank" class="btn btn-primary">💼 LinkedIn</a>
           <a href="https://github.com/Rodrilundain" target="_blank" class="btn btn-outline">🐙 GitHub</a>
         </div>
       </div>
-
       <div class="hero-right">
         <img src="img/img44.jpeg" alt="Rodrigo Ilundain" class="avatar">
       </div>
     </header>
 
     <main class="grid">
-      <!-- COLUMNA PRINCIPAL -->
       <div>
-
-        <!-- EXPERIENCIA -->
         <div class="card">
           <h2>💼 Experiencia Profesional</h2>
           <ul class="timeline">
-
             <li>
               <div class="tl-company">Meditian S.A.</div>
               <div class="tl-role">Data Analyst &amp; Automation Developer</div>
@@ -560,7 +396,6 @@
                 <li>Diseño de sistemas internos que <strong>conectan datos, procesos y equipos</strong></li>
               </ul>
             </li>
-
             <li>
               <div class="tl-company">Grupo Fiancar</div>
               <div class="tl-role">Coordinador de Ventas y CRM</div>
@@ -572,7 +407,6 @@
                 <li>Integración de formularios y CRM para reportería automatizada</li>
               </ul>
             </li>
-
             <li>
               <div class="tl-company">Avanza Externalización de Servicios</div>
               <div class="tl-role">Coordinador de Transformación Digital</div>
@@ -586,14 +420,11 @@
                 <li>Coordinación de <strong>proyectos tecnológicos</strong> entre áreas</li>
               </ul>
             </li>
-
           </ul>
         </div>
 
-        <!-- HABILIDADES -->
         <div class="card">
           <h2>🎯 Habilidades Técnicas</h2>
-
           <div class="skill-group">
             <div class="skill-label"><span>Automatización (n8n · Make · Zapier · ManyChat)</span><span>90%</span></div>
             <div class="bar"><i style="width:90%"></i></div>
@@ -620,62 +451,42 @@
           </div>
         </div>
 
-        <!-- PROYECTOS -->
         <div class="card">
           <h2>🚀 Proyectos Destacados</h2>
           <div class="projects">
-
             <div class="proj">
               <div class="proj-title">🤖 Bot de Atención al Cliente con IA</div>
               <div class="proj-desc">Bot inteligente capaz de atender consultas, interpretar mensajes, gestionar conversaciones y escalar la atención de manera automática vía WhatsApp.</div>
               <div class="proj-tags">
-                <span class="tag">n8n</span>
-                <span class="tag">WhatsApp Business API</span>
-                <span class="tag">IA</span>
-                <span class="tag">Python</span>
+                <span class="tag">n8n</span><span class="tag">WhatsApp Business API</span><span class="tag">IA</span><span class="tag">Python</span>
               </div>
             </div>
-
             <div class="proj">
               <div class="proj-title">🎫 Sistema Integral de Gestión de Tickets</div>
               <div class="proj-desc">Sistema de gestión de tickets de mantenimiento para múltiples locales con seguimiento en tiempo real, notificaciones automáticas y métricas de gestión.</div>
               <div class="proj-tags">
-                <span class="tag">Google Apps Script</span>
-                <span class="tag">WhatsApp Business API</span>
-                <span class="tag">Email Automation</span>
+                <span class="tag">Google Apps Script</span><span class="tag">WhatsApp Business API</span><span class="tag">Email Automation</span>
               </div>
             </div>
-
             <div class="proj">
               <div class="proj-title">📊 Dashboards &amp; Automatización de Reportes</div>
               <div class="proj-desc">Dashboards y reportes automáticos integrando múltiples fuentes de datos con Power BI y Google Apps Script para decisiones estratégicas.</div>
               <div class="proj-tags">
-                <span class="tag">Power BI</span>
-                <span class="tag">Google Apps Script</span>
-                <span class="tag">APIs REST</span>
+                <span class="tag">Power BI</span><span class="tag">Google Apps Script</span><span class="tag">APIs REST</span>
               </div>
             </div>
-
             <div class="proj">
               <div class="proj-title">🔗 Integración de APIs (Meta, Shopify, CRM)</div>
               <div class="proj-desc">Centralización de datos de múltiples fuentes (Meta Ads, Shopify, CRM) para automatizar flujos de trabajo y generar reportería unificada.</div>
               <div class="proj-tags">
-                <span class="tag">Meta API</span>
-                <span class="tag">Shopify API</span>
-                <span class="tag">n8n</span>
-                <span class="tag">Python</span>
+                <span class="tag">Meta API</span><span class="tag">Shopify API</span><span class="tag">n8n</span><span class="tag">Python</span>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
 
-      <!-- SIDEBAR -->
       <aside>
-
-        <!-- SOBRE MÍ -->
         <div class="card">
           <h2>🧑‍💻 Sobre mí</h2>
           <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin:0 0 14px;">
@@ -686,120 +497,50 @@
           </p>
         </div>
 
-        <!-- CONTACTO RÁPIDO -->
         <div class="card">
           <h2>📫 Contacto</h2>
           <div class="quick">
             <div class="quick-item">
               <div class="quick-icon">📧</div>
-              <div class="quick-text">
-                <strong>Email</strong>
-                <span>rodrilundain@gmail.com</span>
-              </div>
+              <div class="quick-text"><strong>Email</strong><span>rodrilundain@gmail.com</span></div>
             </div>
             <div class="quick-item">
               <div class="quick-icon">📱</div>
-              <div class="quick-text">
-                <strong>Teléfono</strong>
-                <span>091 318 211</span>
-              </div>
+              <div class="quick-text"><strong>Teléfono</strong><span>091 318 211</span></div>
             </div>
             <div class="quick-item">
               <div class="quick-icon">💼</div>
-              <div class="quick-text">
-                <strong>LinkedIn</strong>
-                <span>rodrigo-ilundain-122896b5</span>
-              </div>
+              <div class="quick-text"><strong>LinkedIn</strong><span>rodrigo-ilundain-122896b5</span></div>
             </div>
             <div class="quick-item">
               <div class="quick-icon">📍</div>
-              <div class="quick-text">
-                <strong>Ubicación</strong>
-                <span>Montevideo, Uruguay</span>
-              </div>
+              <div class="quick-text"><strong>Ubicación</strong><span>Montevideo, Uruguay</span></div>
             </div>
           </div>
         </div>
 
-        <!-- CERTIFICACIONES -->
         <div class="card">
           <h2>🎓 Formación &amp; Certificaciones</h2>
           <div class="cert-list">
-            <div class="cert-item">
-              <div class="cert-icon">🔁</div>
-              <div>
-                <div class="cert-title">N8N Automation</div>
-                <div class="cert-org">Certificación en automatización (2024)</div>
-              </div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">🌐</div>
-              <div>
-                <div class="cert-title">HTML, CSS, JavaScript</div>
-                <div class="cert-org">Instituto EGG (2024)</div>
-              </div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">🐍</div>
-              <div>
-                <div class="cert-title">Python para Datos</div>
-                <div class="cert-org">Academia Latam (2024)</div>
-              </div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">🤖</div>
-              <div>
-                <div class="cert-title">IA para la Productividad</div>
-                <div class="cert-org">INEFOP (2024)</div>
-              </div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">📊</div>
-              <div>
-                <div class="cert-title">Marketing Digital &amp; Power BI</div>
-                <div class="cert-org">Fundación Telefónica (2023)</div>
-              </div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">🐍</div>
-              <div>
-                <div class="cert-title">Frontend con Python</div>
-                <div class="cert-org">EggCooperation (2025)</div>
-              </div>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">📈</div>
-              <div>
-                <div class="cert-title">Introducción al Análisis de Datos con Python</div>
-                <div class="cert-org">iDesarrollo (2025)</div>
-              </div>
-            </div>
+            <div class="cert-item"><div class="cert-icon">🔁</div><div><div class="cert-title">N8N Automation</div><div class="cert-org">Certificación en automatización (2024)</div></div></div>
+            <div class="cert-item"><div class="cert-icon">🌐</div><div><div class="cert-title">HTML, CSS, JavaScript</div><div class="cert-org">Instituto EGG (2024)</div></div></div>
+            <div class="cert-item"><div class="cert-icon">🐍</div><div><div class="cert-title">Python para Datos</div><div class="cert-org">Academia Latam (2024)</div></div></div>
+            <div class="cert-item"><div class="cert-icon">🤖</div><div><div class="cert-title">IA para la Productividad</div><div class="cert-org">INEFOP (2024)</div></div></div>
+            <div class="cert-item"><div class="cert-icon">📊</div><div><div class="cert-title">Marketing Digital &amp; Power BI</div><div class="cert-org">Fundación Telefónica (2023)</div></div></div>
+            <div class="cert-item"><div class="cert-icon">🐍</div><div><div class="cert-title">Frontend con Python</div><div class="cert-org">EggCooperation (2025)</div></div></div>
+            <div class="cert-item"><div class="cert-icon">📈</div><div><div class="cert-title">Introducción al Análisis de Datos con Python</div><div class="cert-org">iDesarrollo (2025)</div></div></div>
           </div>
         </div>
 
-        <!-- REFERENCIAS -->
         <div class="card">
           <h2>📞 Referencias</h2>
           <div class="ref-list">
-            <div class="ref-item">
-              <div class="ref-name">Lorenzo Barneche</div>
-              <div class="ref-company">Meditian S.A.</div>
-              <div class="ref-phone">📱 098 143 528</div>
-            </div>
-            <div class="ref-item">
-              <div class="ref-name">Jimena Bermejo</div>
-              <div class="ref-company">Grupo FIANCAR</div>
-              <div class="ref-phone">📱 097 964 914</div>
-            </div>
-            <div class="ref-item">
-              <div class="ref-name">Jose Gassire</div>
-              <div class="ref-company">AVANZA</div>
-              <div class="ref-phone">📱 098 943 822</div>
-            </div>
+            <div class="ref-item"><div class="ref-name">Lorenzo Barneche</div><div class="ref-company">Meditian S.A.</div><div class="ref-phone">📱 098 143 528</div></div>
+            <div class="ref-item"><div class="ref-name">Jimena Bermejo</div><div class="ref-company">Grupo FIANCAR</div><div class="ref-phone">📱 097 964 914</div></div>
+            <div class="ref-item"><div class="ref-name">Jose Gassire</div><div class="ref-company">AVANZA</div><div class="ref-phone">📱 098 943 822</div></div>
           </div>
         </div>
 
-        <!-- FREELANCE -->
         <div class="card">
           <h2>🌐 Freelance &amp; Webs</h2>
           <div class="freelance-list">
@@ -808,123 +549,32 @@
             <div class="freelance-item">Amarlo Handmade</div>
           </div>
         </div>
-
       </aside>
     </main>
 
-    <!-- CERTIFICADOS LINKEDIN -->
     <section class="wrap" style="margin-top:0">
       <div class="card" style="margin-bottom:0">
-        <h2 class="section-title">🏆 Certificaciones</h2>
+        <h2>🏆 Certificaciones</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px">
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1765500902176/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">🤖</div>
-            <div>
-              <strong>N8N Automation</strong>
-              <div style="color:var(--muted);font-size:0.8em">Curso Completo N8N: Domina la Automatizacion con IA (2024)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1763959825551/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">🖥</div>
-            <div>
-              <strong>Frontend con Python</strong>
-              <div style="color:var(--muted);font-size:0.8em">EcoSistema Tech (2025)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1734662384780/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">🌐</div>
-            <div>
-              <strong>HTML, CSS, JavaScript</strong>
-              <div style="color:var(--muted);font-size:0.8em">Instituto EGG (2024)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1731984335408/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">📊</div>
-            <div>
-              <strong>Python para Datos</strong>
-              <div style="color:var(--muted);font-size:0.8em">Academia Latam (2024)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1729218376050/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">🤖</div>
-            <div>
-              <strong>IA para la Productividad</strong>
-              <div style="color:var(--muted);font-size:0.8em">INEFOP (2024)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1721880758240/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">🧠</div>
-            <div>
-              <strong>Habilidades Socio Emocionales</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2024)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635536225839/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">📱</div>
-            <div>
-              <strong>Marketing Digital</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635544498335/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">🤝</div>
-            <div>
-              <strong>Tacticas de Negociacion Efectiva</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635542581386/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">💻</div>
-            <div>
-              <strong>Transformacion Digital en las Empresas</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635541710324/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">📈</div>
-            <div>
-              <strong>Introduccion a Power BI</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635533447772/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">💻</div>
-            <div>
-              <strong>Introduccion al Mundo IT</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635533446843/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">🧠</div>
-            <div>
-              <strong>Neuromarketing</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635533447765/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">🌐</div>
-            <div>
-              <strong>WordPress</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635533449287/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">💻</div>
-            <div>
-              <strong>Introduccion a la Programacion</strong>
-              <div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/posts/rodrigo-ilundain-122896b5_python-datascience-aprendizajecontinuo-activity-7257478327408037888-CJHQ" target="_blank" class="cert-card-big">
-            <div class="cert-icon-big">📊</div>
-            <div>
-              <strong>Introduccion al Analisis de Datos con Python</strong>
-              <div style="color:var(--muted);font-size:0.8em">iDesarrollo (2025)</div>
-            </div>
-          </a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1765500902176/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🤖</div><div><strong>N8N Automation</strong><div style="color:var(--muted);font-size:0.8em">Curso Completo N8N: Domina la Automatizacion con IA (2024)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1763959825551/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🖥</div><div><strong>Frontend con Python</strong><div style="color:var(--muted);font-size:0.8em">EcoSistema Tech (2025)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1734662384780/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🌐</div><div><strong>HTML, CSS, JavaScript</strong><div style="color:var(--muted);font-size:0.8em">Instituto EGG (2024)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1731984335408/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">📊</div><div><strong>Python para Datos</strong><div style="color:var(--muted);font-size:0.8em">Academia Latam (2024)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1729218376050/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🤖</div><div><strong>IA para la Productividad</strong><div style="color:var(--muted);font-size:0.8em">INEFOP (2024)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1721880758240/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🧠</div><div><strong>Habilidades Socio Emocionales</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2024)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635536225839/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">📱</div><div><strong>Marketing Digital</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635544498335/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🤝</div><div><strong>Tacticas de Negociacion Efectiva</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635542581386/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">💻</div><div><strong>Transformacion Digital en las Empresas</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635541710324/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">📈</div><div><strong>Introduccion a Power BI</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635533447772/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">💻</div><div><strong>Introduccion al Mundo IT</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635533446843/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🧠</div><div><strong>Neuromarketing</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635533447765/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🌐</div><div><strong>WordPress</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div></div></a>
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1635533449287/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">💻</div><div><strong>Introduccion a la Programacion</strong><div style="color:var(--muted);font-size:0.8em">Fundacion Telefonica (2023)</div></div></a>
+          <a href="https://www.linkedin.com/posts/rodrigo-ilundain-122896b5_python-datascience-aprendizajecontinuo-activity-7257478327408037888-CJHQ" target="_blank" class="cert-card-big"><div class="cert-icon-big">📊</div><div><strong>Introduccion al Analisis de Datos con Python</strong><div style="color:var(--muted);font-size:0.8em">iDesarrollo (2025)</div></div></a>
         </div>
       </div>
     </section>
+
     <footer>
       <p>© <span id="year"></span> Rodrigo Ilundain · Data Analyst &amp; Automation Developer</p>
       <p style="margin-top:8px;opacity:.7;">"Automatizar no es ejecutar más rápido. Es diseñar mejor."</p>
@@ -943,36 +593,35 @@
       scrollIndicator.style.width = pct + '%';
     });
 
-  // MATRIX RAIN ANIMATION
-  (function(){
-    const canvas = document.getElementById('matrix-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01';
-    let drops = [];
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      const cols = Math.floor(canvas.width / 16);
-      drops = Array.from({length: cols}, () => Math.random() * -100);
-    }
-    resize();
-    window.addEventListener('resize', resize);
-    function draw() {
-      ctx.fillStyle = 'rgba(7,12,22,0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#00ffd1';
-      ctx.font = '14px monospace';
-      drops.forEach((y, i) => {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(char, i * 16, y * 16);
-        if (y * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-      });
-      requestAnimationFrame(draw);
-    }
-    draw();
-  })();
+    (function(){
+      const canvas = document.getElementById('matrix-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01';
+      let drops = [];
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const cols = Math.floor(canvas.width / 16);
+        drops = Array.from({length: cols}, () => Math.random() * -100);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+      function draw() {
+        ctx.fillStyle = 'rgba(7,12,22,0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#00ffd1';
+        ctx.font = '14px monospace';
+        drops.forEach((y, i) => {
+          const char = chars[Math.floor(Math.random() * chars.length)];
+          ctx.fillText(char, i * 16, y * 16);
+          if (y * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+          drops[i]++;
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
   </script>
 </body>
 </html>
