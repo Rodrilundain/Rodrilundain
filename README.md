@@ -62,6 +62,7 @@ Trabajo integrando datos, APIs y herramientas digitales para crear **dashboards,
 - Desarrollo de dashboards e informes automáticos con Google Apps Script y Power BI
 - Implementación de bot de atención al cliente con inteligencia artificial
 - Automatización de procesos administrativos y operativos reduciendo tareas manuales
+- Diseño de sistemas internos que conectan datos, procesos y equipos
 
 ### 🤝 Coordinador de Ventas y CRM — Grupo Fiancar
 *jul. 2024 – nov. 2025 | Uruguay*
@@ -73,6 +74,7 @@ Trabajo integrando datos, APIs y herramientas digitales para crear **dashboards,
 - Automatización de procesos administrativos con Google Apps Script, Zapier y Make
 - Desarrollo y mantenimiento de sitios web con WordPress
 - Capacitación de equipos en el uso de nuevas herramientas digitales
+- Coordinación de proyectos tecnológicos entre áreas
 
 ---
 
