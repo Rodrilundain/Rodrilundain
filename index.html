@@ -4,9 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rodrigo Ilundain — Portfolio Profesional</title>
+  <meta name="description" content="Data Analyst & Automation Developer. n8n, Make, Zapier, ManyChat, Python, Google Apps Script, Power BI. Automatización de procesos y datos." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg: #070c16;
@@ -26,9 +27,7 @@
       --radius-sm: 12px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body{
       margin:0;
@@ -39,12 +38,11 @@
       line-height: 1.6;
     }
 
-    /* Gradient background with animation */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse at top, rgba(0, 255, 209, 0.15) 0%, transparent 50%),
+      background: radial-gradient(ellipse at top, rgba(0, 255, 209, 0.15) 0%, transparent 60%),
                   radial-gradient(ellipse at bottom right, rgba(60, 253, 253, 0.1) 0%, transparent 50%);
       animation: bgShift 20s ease-in-out infinite;
       z-index: 0;
@@ -52,957 +50,754 @@
 
     @keyframes bgShift {
       0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.7; }
+      50% { opacity: 1; }
     }
 
     .wrap{
-      max-width:1200px;
-      margin:auto;
-      padding:40px;
-      position:relative;
-      z-index:2;
-    }
-
-    h1,h2,h3{
-      margin:0 0 16px 0;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    
-    h1 {
-      font-size: 3rem;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      color: var(--accent);
       position: relative;
-      padding-bottom: 12px;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 32px;
     }
 
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      border-radius: 2px;
-    }
-
-    a{
-      text-decoration:none;
-      color:var(--accent);
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--accent-2);
-    }
-
-    /* HERO SECTION */
-    header.hero{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:40px;
-      background:var(--glass);
-      backdrop-filter: blur(20px);
-      border:var(--outline);
-      border-radius:var(--radius);
-      padding:40px;
-      box-shadow:var(--shadow-lg);
-      position: relative;
-      overflow: hidden;
+    /* HERO */
+    .hero{
+      display: flex;
+      gap: 40px;
+      align-items: center;
       margin-bottom: 40px;
-      animation: fadeInUp 0.8s ease;
+      background: var(--glass);
+      border: var(--outline);
+      border-radius: var(--radius);
+      padding: 40px;
+      backdrop-filter: blur(10px);
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    .hero-left{ flex: 1; }
 
-    header.hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0,255,209,0.1), transparent);
-      animation: shimmer 8s infinite;
-    }
-
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-
-    .hero-left {
-      flex: 1;
-      z-index: 1;
-    }
-
-    .hero-right {
-      text-align: center;
-      z-index: 1;
+    .hero-right{
+      flex-shrink: 0;
     }
 
     .avatar{
-      width:180px;
-      height:180px;
-      border-radius:20px;
-      background:url("img/img44.jpeg") center top / cover;
-      border:3px solid var(--accent-glow);
-      box-shadow:0 0 40px var(--accent-glow), 0 10px 30px rgba(0,0,0,0.5);
-      position: relative;
-      animation: avatarGlow 3s ease-in-out infinite;
-      transition: transform 0.3s ease;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 30px var(--accent-glow);
+      object-fit: cover;
+      display: block;
     }
 
-    .avatar:hover {
-      transform: scale(1.05) rotate(2deg);
+    h1{
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin: 0 0 8px;
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    @keyframes avatarGlow {
-      0%, 100% { box-shadow: 0 0 30px var(--accent-glow), 0 10px 30px rgba(0,0,0,0.5); }
-      50% { box-shadow: 0 0 50px var(--accent-glow), 0 10px 30px rgba(0,0,0,0.5); }
+    .hero-subtitle{
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
-    .info{
-      margin-top:16px;
-      color:var(--muted);
+    .hero-tagline{
       font-size: 0.95rem;
-    }
-
-    .quick{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      margin-top:16px;
-      flex-wrap: wrap;
-    }
-
-    .chip{
-      background:var(--glass);
-      padding:10px 18px;
-      border-radius:999px;
-      color:var(--text);
-      border:var(--outline);
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .chip::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--accent-glow), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .chip:hover{
-      background:var(--glass-hover);
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      box-shadow: 0 5px 20px rgba(0,255,209,0.2);
-    }
-
-    .chip:hover::before {
-      opacity: 1;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      background: linear-gradient(135deg, rgba(0,255,209,0.1), rgba(60,253,253,0.05));
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      border: 1px solid rgba(0,255,209,0.2);
-      transition: all 0.3s ease;
-    }
-
-    .tag:hover {
-      background: linear-gradient(135deg, rgba(0,255,209,0.2), rgba(60,253,253,0.1));
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    /* GRID LAYOUT */
-    .grid{
-      display:grid;
-      grid-template-columns:1.3fr 0.7fr;
-      gap:30px;
-    }
-
-    .card{
-      background:var(--glass);
-      backdrop-filter: blur(10px);
-      border:var(--outline);
-      border-radius:var(--radius);
-      padding:32px;
-      box-shadow:var(--shadow);
-      transition: all 0.4s ease;
-      animation: fadeInUp 0.8s ease;
-      animation-fill-mode: both;
-    }
-
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(0,255,209,0.3);
-    }
-
-    /* TIMELINE */
-    .timeline{
-      list-style:none;
-      padding:0;
-      margin:24px 0;
-      position: relative;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 4px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, var(--accent), transparent);
-    }
-
-    .timeline li{
-      margin-bottom:32px;
-      position:relative;
-      padding-left:32px;
-      transition: all 0.3s ease;
-    }
-
-    .timeline li:hover {
-      padding-left: 40px;
-    }
-
-    .timeline li::before{
-      content:'';
-      position:absolute;
-      left:0;
-      top:8px;
-      width:10px;
-      height:10px;
-      background:var(--accent);
-      border-radius:50%;
-      box-shadow: 0 0 15px var(--accent-glow);
-      z-index: 1;
-      transition: all 0.3s ease;
-    }
-
-    .timeline li:hover::before {
-      transform: scale(1.3);
-      box-shadow: 0 0 25px var(--accent-glow);
-    }
-
-    .timeline li strong {
-      color: var(--accent-2);
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .timeline li small {
       color: var(--muted);
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    .timeline li p {
-      margin: 8px 0;
-      color: var(--text);
-    }
-
-    .timeline li ul {
-      color: var(--muted);
-      margin-top: 12px;
-      padding-left: 20px;
-    }
-
-    .timeline li ul li {
-      margin-bottom: 8px;
-      padding-left: 0;
-    }
-
-    .timeline li ul li::before {
-      display: none;
-    }
-
-    /* SKILLS */
-    .skills{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-      margin-top:24px;
-    }
-
-    .skill{
-      background:rgba(255,255,255,.05);
-      backdrop-filter: blur(5px);
-      border-radius:12px;
-      padding:16px;
-      position:relative;
-      transition: all 0.3s ease;
-      border: 1px solid transparent;
-    }
-
-    .skill:hover {
-      background: rgba(255,255,255,.08);
-      transform: translateX(5px);
-      border-color: var(--accent-glow);
-    }
-
-    .skill .skill-name {
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .skill .bar{
-      height:10px;
-      background:rgba(255,255,255,.08);
-      border-radius:999px;
-      overflow:hidden;
-      margin-top:10px;
-      position: relative;
-    }
-
-    .skill .bar::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      animation: barShimmer 2s infinite;
-    }
-
-    @keyframes barShimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    .skill .bar i{
-      display:block;
-      height:100%;
-      width:0;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      transition:width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 0 10px var(--accent-glow);
-      position: relative;
-    }
-
-    .skill .pct{
-      position:absolute;
-      right:16px;
-      top:50%;
-      transform:translateY(-50%);
-      font-size:0.9rem;
-      color:var(--accent);
-      font-weight:700;
-    }
-
-    /* PROJECTS */
-    .projects{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-      margin-top:24px;
-    }
-
-    .project{
-      background:var(--glass);
-      backdrop-filter: blur(5px);
-      border:var(--outline);
-      border-radius:var(--radius-sm);
-      padding:20px;
-      text-decoration:none;
-      color:var(--text);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 0;
-      background: linear-gradient(180deg, var(--accent), var(--accent-2));
-      transition: height 0.3s ease;
-    }
-
-    .project:hover{
-      background:var(--glass-hover);
-      transform: translateY(-5px) translateX(5px);
-      box-shadow: 0 10px 30px rgba(0,255,209,0.2);
-      border-color: var(--accent-glow);
-    }
-
-    .project:hover::before {
-      height: 100%;
-    }
-
-    .project h4{
-      margin:0 0 8px 0;
-      color:var(--accent);
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .project p{
-      margin:0;
-      font-size:0.9rem;
-      color:var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ASIDE SECTION */
-    aside.card h2 {
-      font-size: 1.5rem;
       margin-bottom: 20px;
     }
 
-    aside.card ul {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0;
+    .chips{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
     }
 
-    aside.card ul li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: all 0.3s ease;
+    .chip{
+      background: rgba(0,255,209,.1);
+      border: 1px solid rgba(0,255,209,.25);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      font-weight: 500;
     }
 
-    aside.card ul li:hover {
-      padding-left: 10px;
-      border-color: var(--accent-glow);
-    }
-
-    aside.card ul li:last-child {
-      border-bottom: none;
-    }
-
-    aside.card p {
+    .contact-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1.8;
-      margin: 16px 0;
+      margin-bottom: 20px;
     }
+
+    .contact-row span{ display: flex; align-items: center; gap: 6px; }
+
+    .btn-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .btn-primary{
+      background: var(--accent);
+      color: #000;
+    }
+
+    .btn-primary:hover{ background: var(--accent-2); transform: translateY(-2px); }
+
+    .btn-outline{
+      border: 1px solid rgba(255,255,255,.2);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-outline:hover{ border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* GRID */
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* CARD */
+    .card{
+      background: var(--glass);
+      border: var(--outline);
+      border-radius: var(--radius);
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 28px;
+    }
+
+    .card:last-child{ margin-bottom: 0; }
+
+    .card h2{
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 0 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    /* TIMELINE */
+    .timeline{ list-style: none; padding: 0; margin: 0; }
+
+    .timeline > li{
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 32px;
+    }
+
+    .timeline > li:last-child{ margin-bottom: 0; }
+
+    .timeline > li::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    .timeline > li::after{
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 18px;
+      width: 2px;
+      bottom: -24px;
+      background: rgba(0,255,209,.15);
+    }
+
+    .timeline > li:last-child::after{ display: none; }
+
+    .tl-company{
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .tl-role{
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin: 2px 0;
+    }
+
+    .tl-date{
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tl-desc{
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+
+    .tl-list{
+      padding-left: 16px;
+      margin: 8px 0 0;
+    }
+
+    .tl-list li{
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .tl-list li strong{ color: var(--accent); }
+
+    /* SKILLS */
+    .skill-group{ margin-bottom: 20px; }
+    .skill-group:last-child{ margin-bottom: 0; }
+    .skill-label{
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .bar{
+      background: rgba(255,255,255,.07);
+      border-radius: 999px;
+      height: 6px;
+      overflow: hidden;
+    }
+
+    .bar i{
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      animation: grow .8s ease forwards;
+    }
+
+    @keyframes grow { from{ width:0 } }
+
+    /* PROJECTS */
+    .projects{ display: flex; flex-direction: column; gap: 16px; }
+
+    .proj{
+      background: var(--glass-hover);
+      border: var(--outline);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .proj:hover{ transform: translateY(-3px); border-color: rgba(0,255,209,.3); }
+
+    .proj-title{
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .proj-desc{
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .proj-tags{ display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .tag{
+      background: rgba(0,255,209,.08);
+      border: 1px solid rgba(0,255,209,.2);
+      color: var(--accent);
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    /* SIDEBAR */
+    .quick{ display: flex; flex-direction: column; gap: 20px; }
+
+    .quick-item{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    .quick-icon{
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(0,255,209,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .quick-text strong{ display: block; font-size: 0.9rem; color: var(--text); }
+    .quick-text span{ font-size: 0.82rem; color: var(--muted); }
+
+    /* REFS */
+    .ref-list{ display: flex; flex-direction: column; gap: 14px; }
+
+    .ref-item{
+      border-left: 2px solid var(--accent);
+      padding-left: 14px;
+    }
+
+    .ref-name{ font-weight: 700; font-size: 0.9rem; color: var(--text); }
+    .ref-company{ font-size: 0.82rem; color: var(--muted); }
+    .ref-phone{ font-size: 0.82rem; color: var(--accent); margin-top: 2px; }
+
+    /* CERTS */
+    .cert-list{ display: flex; flex-direction: column; gap: 12px; }
+
+    .cert-item{
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .cert-icon{
+      width: 32px;
+      height: 32px;
+      background: rgba(0,255,209,.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .cert-title{ font-weight: 600; font-size: 0.88rem; color: var(--text); }
+    .cert-org{ font-size: 0.8rem; color: var(--muted); }
+
+    /* FREELANCE */
+    .freelance-list{ display: flex; flex-direction: column; gap: 10px; }
+    .freelance-item{
+      font-size: 0.88rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .freelance-item::before{ content: '🌐'; }
 
     /* FOOTER */
     footer{
-      text-align:center;
-      margin-top:40px;
-      color:var(--muted);
-      font-size:0.9rem;
-      padding: 30px 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    /* CODE RAIN CANVAS */
-    .code-canvas{
-      position:fixed;
-      inset:0;
-      z-index:0;
-      opacity:.35;
-      pointer-events:none;
-      filter: brightness(1.2);
+      text-align: center;
+      padding: 40px 0 20px;
+      color: var(--muted);
+      font-size: 0.85rem;
     }
 
     /* SCROLL INDICATOR */
-    .scroll-indicator {
+    .scroll-indicator{
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
+      top: 0; left: 0;
       height: 3px;
       background: linear-gradient(90deg, var(--accent), var(--accent-2));
       z-index: 9999;
-      transition: width 0.1s ease;
+      transition: width .1s;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1024px){
-      .grid{
-        grid-template-columns:1fr;
-      }
-      
-      .skills{
-        grid-template-columns:1fr;
-      }
-
-      .projects{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width: 768px){
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      header.hero{
-        flex-direction:column;
-        padding: 30px;
-      }
-      
-      .hero-right{
-        order: -1;
-      }
-
-      .avatar{
-        width: 150px;
-        height: 150px;
-      }
-
-      .wrap{
-        padding: 24px;
-      }
-
-      .card{
-        padding: 24px;
-      }
-
-      .quick{
-        flex-wrap:wrap;
-      }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .hero{ flex-direction: column; text-align: center; }
+      .hero-right{ order: -1; }
+      .avatar{ width: 150px; height: 150px; }
+      .chips{ justify-content: center; }
+      .contact-row{ justify-content: center; }
+      .btn-row{ justify-content: center; }
     }
 
     @media (max-width: 520px){
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .wrap{
-        padding:16px;
-      }
-
-      .avatar{
-        width:130px;
-        height:130px;
-      }
-
-      .chip{
-        padding:8px 14px;
-        font-size: 0.85rem;
-      }
-
-      .card{
-        padding: 20px;
-      }
-
-      .timeline li {
-        padding-left: 24px;
-      }
+      h1 { font-size: 1.8rem; }
+      .wrap{ padding:16px; }
+      .avatar{ width:130px; height:130px; }
+      .chip{ padding:8px 14px; font-size: 0.85rem; }
+      .card{ padding: 20px; }
     }
 
-    /* CUSTOM SCROLLBAR */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, var(--accent), var(--accent-2));
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent);
-    }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(0,255,209,.3); border-radius: 999px; }
   </style>
 </head>
 <body>
   <div class="scroll-indicator" id="scrollIndicator"></div>
-  <canvas id="codeRain" class="code-canvas"></canvas>
-  
+
   <div class="wrap">
+
+    <!-- HERO -->
     <header class="hero">
       <div class="hero-left">
         <h1>Rodrigo Ilundain</h1>
-        <p style="font-size: 1.2rem; color: var(--muted); margin-bottom: 8px;">
-          Analista de Datos · Developer · Especialista CRM
-        </p>
-        <div class="tags">
-          <span class="tag">Data Analytics</span>
-          <span class="tag">CRM</span>
-          <span class="tag">App Script</span>
-          <span class="tag">Python</span>
-          <span class="tag">Automatización</span>
-          <span class="tag">APIs</span>
-          <span class="tag">HTML/CSS/JS</span>
-          <span class="tag">N8N</span>
+        <div class="hero-subtitle">Data Analyst &amp; Automation Developer</div>
+        <div class="hero-tagline">Convirtiendo procesos manuales en sistemas automatizados que trabajan solos</div>
+
+        <div class="chips">
+          <span class="chip">n8n</span>
+          <span class="chip">Make</span>
+          <span class="chip">Zapier</span>
+          <span class="chip">ManyChat</span>
+          <span class="chip">Python</span>
+          <span class="chip">Google Apps Script</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">APIs REST</span>
         </div>
-        <p style="margin-top:20px; color:var(--muted); line-height: 1.8;">
-          Profesional especializado en análisis de datos y desarrollo de soluciones tecnológicas. Implemento sistemas CRM, automatizaciones y herramientas de análisis que optimizan procesos comerciales y la toma de decisiones basada en datos.
-        </p>
+
+        <div class="contact-row">
+          <span>📍 Montevideo, Uruguay</span>
+          <span>📱 091 318 211</span>
+          <span>📧 rodrilundain@gmail.com</span>
+        </div>
+
+        <div class="btn-row">
+          <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/" target="_blank" class="btn btn-primary">💼 LinkedIn</a>
+          <a href="https://github.com/Rodrilundain" target="_blank" class="btn btn-outline">🐙 GitHub</a>
+        </div>
       </div>
+
       <div class="hero-right">
-        <div class="avatar"></div>
-        <div class="info">
-          📍 Montevideo<br>
-          📱 091 318 211<br>
-          📧 rodrilundain@gmail.com
-        </div>
-        <div class="quick">
-          <a class="chip" href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5" target="_blank" rel="noopener">
-            LinkedIn
-          </a>
-          <a class="chip" href="https://github.com/Rodrilundain" target="_blank" rel="noopener">
-            GitHub
-          </a>
-          <a class="chip" href="https://drive.google.com/file/d/1fGtMj02-zG34FJdMjruqIwM78bkIyY_h/view?usp=sharing" target="_blank" rel="noopener">
-            ⬇️ Descargar CV
-          </a>
-        </div>
+        <img src="imagen/img44.jpeg" alt="Rodrigo Ilundain" class="avatar" onerror="this.style.display='none'">
       </div>
     </header>
 
-    <div class="grid">
-      <section class="card">
-        <h2>💼 Experiencia Profesional</h2>
-        <ul class="timeline">
-          <li>
-            <strong>Meditian S.A. — Analista de Datos, Developer & Especialista CRM</strong><br>
-            <small>📅 Noviembre 2024 — Actualidad</small>
-            <p>Desarrollo e implementación de soluciones de análisis de datos, integraciones CRM y automatizaciones para optimizar procesos comerciales y de marketing en el sector salud.</p>
-            <ul style="list-style:disc">
-              <li>Implementación de sistemas de <strong>tracking de gastos</strong> con reposición de fondos fijos y tarjetas corporativas.</li>
-              <li>Desarrollo de plataforma de <strong>marketing automation (MEDITIAN PRO)</strong> con integración a Meta Custom Audiences API.</li>
-              <li>Creación de <strong>dashboards de inventario y proyecciones de ventas</strong> con análisis multidimensional en Google Sheets.</li>
-              <li>Automatización de flujos de trabajo mediante <strong>Google Apps Script y N8N</strong>.</li>
-              <li>Integración y gestión de <strong>CRM</strong> con procesos de seguimiento y reportería automatizada.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Grupo FIANCAR — Coordinador & Desarrollador Interno</strong><br>
-            <small>📅 Julio 2024 — Noviembre 2024</small>
-            <p>Desarrollo e implementación de soluciones con Google Apps Script y automatismos en Zapier para conectar sistemas internos, optimizar comunicación y eliminar tareas repetitivas.</p>
-            <ul style="list-style:disc">
-              <li>Implementación de sistema web de <strong>tickets</strong> que redujo un 30% el tiempo de resolución de reclamos.</li>
-              <li>Automatización de solicitudes de <strong>adelantos, licencias y reportería</strong> con más de <strong>500 interacciones mensuales</strong>.</li>
-              <li>Alertas automáticas de <strong>altas/bajas</strong> y asignación dinámica de tareas, aumentando la eficiencia operativa en un <strong>25%</strong>.</li>
-              <li>Integraciones de formularios y CRM vía <strong>Zapier</strong> para flujos sin fricción entre departamentos.</li>
-            </ul>
-          </li>
-          <li>
-            <strong>AVANZA — Coordinador de Estrategia Digital</strong><br>
-            <small>📅 Junio 2017 — Julio 2024</small>
-            <p>Gestión de campañas, CRM, control de ventas y supervisión de equipos. Desarrollo de herramientas para optimizar la atención y los reportes del contact center, logrando un <strong>incremento del 40% en la productividad</strong>.</p>
-          </li>
-          <li>
-            <strong>PeposFood — Coordinación Operativa</strong><br>
-            <small>📅 Febrero 2019 — Diciembre 2022</small>
-            <p>Coordinación operativa y diseño de procesos para atención al cliente y logística, mejorando los tiempos de entrega y la satisfacción del cliente.</p>
-          </li>
-        </ul>
+    <main class="grid">
+      <!-- COLUMNA PRINCIPAL -->
+      <div>
 
-        <h2>🎯 Habilidades Técnicas</h2>
-        <div class="skills">
-          <div class="skill" data-pct="88">
-            <div class="skill-name">Data Analytics & Reporting</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">88%</span>
+        <!-- EXPERIENCIA -->
+        <div class="card">
+          <h2>💼 Experiencia Profesional</h2>
+          <ul class="timeline">
+
+            <li>
+              <div class="tl-company">Meditian S.A.</div>
+              <div class="tl-role">Data Analyst &amp; Automation Developer</div>
+              <div class="tl-date">📅 Noviembre 2025 — Actualidad · Montevideo, Uruguay</div>
+              <div class="tl-desc">Desarrollo e implemento soluciones de automatización y análisis de datos para optimizar procesos operativos en la empresa.</div>
+              <ul class="tl-list">
+                <li>Diseño e implementación de <strong>sistemas de gestión de tickets</strong> de mantenimiento con notificaciones automáticas vía email y WhatsApp</li>
+                <li>Integración de <strong>APIs (Meta, Shopify, CRM)</strong> para centralizar datos y automatizar flujos de trabajo</li>
+                <li>Desarrollo de <strong>dashboards e informes automáticos</strong> con Google Apps Script y Power BI</li>
+                <li>Implementación de <strong>bot de atención al cliente con IA</strong> (n8n + WhatsApp Business API)</li>
+                <li>Automatización de procesos administrativos y operativos <strong>reduciendo tareas manuales</strong></li>
+                <li>Diseño de sistemas internos que <strong>conectan datos, procesos y equipos</strong></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="tl-company">Grupo Fiancar</div>
+              <div class="tl-role">Coordinador de Ventas y CRM</div>
+              <div class="tl-date">📅 Julio 2024 — Noviembre 2025 · Uruguay</div>
+              <div class="tl-desc">Gestión y coordinación de ventas con integración de herramientas CRM para optimizar el seguimiento comercial y reportería.</div>
+              <ul class="tl-list">
+                <li>Implementación de <strong>sistema web de tickets</strong> que redujo tiempos de resolución de reclamos</li>
+                <li>Automatización de solicitudes con <strong>Google Apps Script y Zapier</strong> para flujos sin fricción</li>
+                <li>Integración de formularios y CRM para reportería automatizada</li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="tl-company">Avanza Externalización de Servicios</div>
+              <div class="tl-role">Coordinador de Transformación Digital</div>
+              <div class="tl-date">📅 Agosto 2022 — Julio 2024 · Montevideo, Uruguay</div>
+              <div class="tl-desc">Responsable de liderar la transformación digital de los procesos internos de la empresa.</div>
+              <ul class="tl-list">
+                <li>Implementación y gestión de <strong>herramientas digitales</strong> para optimizar flujos de trabajo</li>
+                <li>Automatización de procesos administrativos con <strong>Google Apps Script, Zapier y Make</strong></li>
+                <li>Desarrollo y mantenimiento de <strong>sitios web con WordPress</strong></li>
+                <li>Capacitación de equipos en el uso de nuevas herramientas digitales</li>
+                <li>Coordinación de <strong>proyectos tecnológicos</strong> entre áreas</li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- HABILIDADES -->
+        <div class="card">
+          <h2>🎯 Habilidades Técnicas</h2>
+
+          <div class="skill-group">
+            <div class="skill-label"><span>Automatización (n8n · Make · Zapier · ManyChat)</span><span>90%</span></div>
+            <div class="bar"><i style="width:90%"></i></div>
           </div>
-          <div class="skill" data-pct="85">
-            <div class="skill-name">CRM & Gestión Comercial</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">85%</span>
+          <div class="skill-group">
+            <div class="skill-label"><span>Data Analytics &amp; Power BI</span><span>88%</span></div>
+            <div class="bar"><i style="width:88%"></i></div>
           </div>
-          <div class="skill" data-pct="82">
-            <div class="skill-name">Apps Script & N8N</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">82%</span>
+          <div class="skill-group">
+            <div class="skill-label"><span>Google Apps Script</span><span>85%</span></div>
+            <div class="bar"><i style="width:85%"></i></div>
           </div>
-          <div class="skill" data-pct="75">
-            <div class="skill-name">Python para Datos</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">75%</span>
+          <div class="skill-group">
+            <div class="skill-label"><span>Python para Datos (Pandas, NumPy)</span><span>78%</span></div>
+            <div class="bar"><i style="width:78%"></i></div>
           </div>
-          <div class="skill" data-pct="78">
-            <div class="skill-name">APIs & Integraciones</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">78%</span>
+          <div class="skill-group">
+            <div class="skill-label"><span>APIs REST e Integraciones</span><span>82%</span></div>
+            <div class="bar"><i style="width:82%"></i></div>
           </div>
-          <div class="skill" data-pct="72">
-            <div class="skill-name">HTML / CSS / JavaScript</div>
-            <div class="bar"><i></i></div>
-            <span class="pct">72%</span>
+          <div class="skill-group">
+            <div class="skill-label"><span>HTML / CSS / JavaScript</span><span>72%</span></div>
+            <div class="bar"><i style="width:72%"></i></div>
           </div>
         </div>
 
-        <h2>🚀 Proyectos Destacados</h2>
-        <div class="projects">
-          <a class="project" href="#" target="_blank">
-            <h4>MEDITIAN PRO - Marketing Automation</h4>
-            <p>Plataforma de automatización con procesamiento de CSV e integración con Meta Custom Audiences API para campañas segmentadas.</p>
-          </a>
-          <a class="project" href="#" target="_blank">
-            <h4>Sistema de Gestión Financiera</h4>
-            <p>Control de reposición de fondos fijos y tarjetas corporativas con tracking automático y reportería en tiempo real.</p>
-          </a>
-          <a class="project" href="#" target="_blank">
-            <h4>Dashboard de Inventario & Ventas</h4>
-            <p>Análisis multidimensional con proyecciones de ventas y cálculos de stock optimizados en Google Sheets.</p>
-          </a>
-          <a class="project" href="#" target="_blank">
-            <h4>Portal de Solicitudes (FIANCAR)</h4>
-            <p>Sistema completo de licencias y adelantos con validaciones, registro histórico y notificaciones automáticas.</p>
-          </a>
+        <!-- PROYECTOS -->
+        <div class="card">
+          <h2>🚀 Proyectos Destacados</h2>
+          <div class="projects">
+
+            <div class="proj">
+              <div class="proj-title">🤖 Bot de Atención al Cliente con IA</div>
+              <div class="proj-desc">Bot inteligente capaz de atender consultas, interpretar mensajes, gestionar conversaciones y escalar la atención de manera automática vía WhatsApp.</div>
+              <div class="proj-tags">
+                <span class="tag">n8n</span>
+                <span class="tag">WhatsApp Business API</span>
+                <span class="tag">IA</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+
+            <div class="proj">
+              <div class="proj-title">🎫 Sistema Integral de Gestión de Tickets</div>
+              <div class="proj-desc">Sistema de gestión de tickets de mantenimiento para múltiples locales con seguimiento en tiempo real, notificaciones automáticas y métricas de gestión.</div>
+              <div class="proj-tags">
+                <span class="tag">Google Apps Script</span>
+                <span class="tag">WhatsApp Business API</span>
+                <span class="tag">Email Automation</span>
+              </div>
+            </div>
+
+            <div class="proj">
+              <div class="proj-title">📊 Dashboards &amp; Automatización de Reportes</div>
+              <div class="proj-desc">Dashboards y reportes automáticos integrando múltiples fuentes de datos con Power BI y Google Apps Script para decisiones estratégicas.</div>
+              <div class="proj-tags">
+                <span class="tag">Power BI</span>
+                <span class="tag">Google Apps Script</span>
+                <span class="tag">APIs REST</span>
+              </div>
+            </div>
+
+            <div class="proj">
+              <div class="proj-title">🔗 Integración de APIs (Meta, Shopify, CRM)</div>
+              <div class="proj-desc">Centralización de datos de múltiples fuentes (Meta Ads, Shopify, CRM) para automatizar flujos de trabajo y generar reportería unificada.</div>
+              <div class="proj-tags">
+                <span class="tag">Meta API</span>
+                <span class="tag">Shopify API</span>
+                <span class="tag">n8n</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </section>
 
-      <aside class="card">
-        <h2>🌐 Freelance & Webs</h2>
-        <ul>
-          <li><a href="https://gluglupludemascotas.wixsite.com/glu-glu-peluqueria-d" target="_blank">GLU GLU — Peluquería</a></li>
-          <li><a href="https://delivermana.wixsite.com/deriverman" target="_blank">DeliverMan — Cadetería</a></li>
-          <li><a href="https://amarlohandmade.wixsite.com/amarlo" target="_blank">Amarlo Handmade</a></li>
-        </ul>
+      </div>
 
-        <h2>📞 Referencias</h2>
-        <p>
-          <strong>Lorenzo Barneche</strong><br>
-          Grupo FIANCAR<br>
-          📱 098 143 528
-        </p>
-        <p>
-          <strong>Jimena Bermejo</strong><br>
-          Grupo FIANCAR<br>
-          📱 097 964 914
-        </p>
-        <p>
-          <strong>Jose Gassire</strong><br>
-          AVANZA<br>
-          📱 098 943 822
-        </p>
+      <!-- SIDEBAR -->
+      <aside>
 
-        <h2>🎓 Formación & Certificaciones</h2>
-        <ul>
-          <li>
-            <strong>N8N Automation</strong><br>
-            Certificación en automatización (2024)
-          </li>
-          <li>
-            <strong>Instituto EGG</strong><br>
-            HTML, CSS, JavaScript (2024)
-          </li>
-          <li>
-            <strong>Academia Latam</strong><br>
-            Python para Datos (2024)
-          </li>
-          <li>
-            <strong>INEFOP</strong><br>
-            IA para la Productividad (2024)
-          </li>
-          <li>
-            <strong>Fundación Telefónica</strong><br>
-            Marketing Digital & Power BI (2023)
-          </li>
-        </ul>
+        <!-- SOBRE MÍ -->
+        <div class="card">
+          <h2>🧑‍💻 Sobre mí</h2>
+          <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin:0 0 14px;">
+            Más de <strong style="color:var(--text)">7 años en entornos empresariales</strong> y 2 años especializándome en data, APIs y automatización con Python, n8n, Make, Zapier, ManyChat y Google Apps Script.
+          </p>
+          <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin:0;">
+            Actualmente en <strong style="color:var(--accent)">Meditian S.A.</strong> desarrollando soluciones que conectan datos, procesos y personas. Me interesa colaborar en proyectos de automatización, analytics y transformación digital.
+          </p>
+        </div>
+
+        <!-- CONTACTO RÁPIDO -->
+        <div class="card">
+          <h2>📫 Contacto</h2>
+          <div class="quick">
+            <div class="quick-item">
+              <div class="quick-icon">📧</div>
+              <div class="quick-text">
+                <strong>Email</strong>
+                <span>rodrilundain@gmail.com</span>
+              </div>
+            </div>
+            <div class="quick-item">
+              <div class="quick-icon">📱</div>
+              <div class="quick-text">
+                <strong>Teléfono</strong>
+                <span>091 318 211</span>
+              </div>
+            </div>
+            <div class="quick-item">
+              <div class="quick-icon">💼</div>
+              <div class="quick-text">
+                <strong>LinkedIn</strong>
+                <span>rodrigo-ilundain-122896b5</span>
+              </div>
+            </div>
+            <div class="quick-item">
+              <div class="quick-icon">📍</div>
+              <div class="quick-text">
+                <strong>Ubicación</strong>
+                <span>Montevideo, Uruguay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICACIONES -->
+        <div class="card">
+          <h2>🎓 Formación &amp; Certificaciones</h2>
+          <div class="cert-list">
+            <div class="cert-item">
+              <div class="cert-icon">🔁</div>
+              <div>
+                <div class="cert-title">N8N Automation</div>
+                <div class="cert-org">Certificación en automatización (2024)</div>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">🌐</div>
+              <div>
+                <div class="cert-title">HTML, CSS, JavaScript</div>
+                <div class="cert-org">Instituto EGG (2024)</div>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">🐍</div>
+              <div>
+                <div class="cert-title">Python para Datos</div>
+                <div class="cert-org">Academia Latam (2024)</div>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">🤖</div>
+              <div>
+                <div class="cert-title">IA para la Productividad</div>
+                <div class="cert-org">INEFOP (2024)</div>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">📊</div>
+              <div>
+                <div class="cert-title">Marketing Digital &amp; Power BI</div>
+                <div class="cert-org">Fundación Telefónica (2023)</div>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">🐍</div>
+              <div>
+                <div class="cert-title">Frontend con Python</div>
+                <div class="cert-org">EggCooperation (2025)</div>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">📈</div>
+              <div>
+                <div class="cert-title">Introducción al Análisis de Datos con Python</div>
+                <div class="cert-org">iDesarrollo (2025)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- REFERENCIAS -->
+        <div class="card">
+          <h2>📞 Referencias</h2>
+          <div class="ref-list">
+            <div class="ref-item">
+              <div class="ref-name">Lorenzo Barneche</div>
+              <div class="ref-company">Grupo FIANCAR</div>
+              <div class="ref-phone">📱 098 143 528</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-name">Jimena Bermejo</div>
+              <div class="ref-company">Grupo FIANCAR</div>
+              <div class="ref-phone">📱 097 964 914</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-name">Jose Gassire</div>
+              <div class="ref-company">AVANZA</div>
+              <div class="ref-phone">📱 098 943 822</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FREELANCE -->
+        <div class="card">
+          <h2>🌐 Freelance &amp; Webs</h2>
+          <div class="freelance-list">
+            <div class="freelance-item">GLU GLU — Peluquería</div>
+            <div class="freelance-item">DeliverMan — Cadetería</div>
+            <div class="freelance-item">Amarlo Handmade</div>
+          </div>
+        </div>
+
       </aside>
-    </div>
+    </main>
 
     <footer>
-      <p>© <span id="year"></span> Rodrigo Ilundain · Innovación, Automatización y Desarrollo</p>
-      <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.7;">
-        Construyendo el futuro digital, una línea de código a la vez 💻✨
-      </p>
+      <p>© <span id="year"></span> Rodrigo Ilundain · Data Analyst &amp; Automation Developer</p>
+      <p style="margin-top:8px;opacity:.7;">"Automatizar no es ejecutar más rápido. Es diseñar mejor."</p>
     </footer>
+
   </div>
 
   <script>
-    // ============================================
-    // SCROLL PROGRESS INDICATOR
-    // ============================================
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const scrollIndicator = document.getElementById('scrollIndicator');
     window.addEventListener('scroll', () => {
-      const scrollIndicator = document.getElementById('scrollIndicator');
-      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (window.scrollY / windowHeight) * 100;
-      scrollIndicator.style.width = scrolled + '%';
-    });
-
-    // ============================================
-    // CODE RAIN ANIMATION (ENHANCED)
-    // ============================================
-    (function(){
-      const c = document.getElementById('codeRain');
-      const ctx = c.getContext('2d');
-      const chars = '01{}[]<>=+-*/&|^%!#@$?;:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      let w, h, fontSize, drops, speeds;
-      
-      function resize(){
-        w = c.width = innerWidth;
-        h = c.height = innerHeight;
-        fontSize = Math.max(14, Math.floor(w / 60)); // Caracteres más grandes
-        const columns = Math.ceil(w / fontSize);
-        drops = new Array(columns).fill(0).map(() => Math.floor(Math.random() * h / fontSize));
-        speeds = new Array(columns).fill(0).map(() => Math.random() * 0.5 + 0.5); // Velocidades variables
-      }
-      
-      resize();
-      window.addEventListener('resize', resize);
-      
-      function draw(){
-        // Trail más ligero para mayor visibilidad
-        ctx.fillStyle = 'rgba(7,12,22,0.12)';
-        ctx.fillRect(0, 0, w, h);
-        
-        drops.forEach((y, i) => {
-          const text = chars[Math.floor(Math.random() * chars.length)];
-          const x = i * fontSize;
-          
-          // Gradiente de color para efecto de profundidad
-          const gradient = ctx.createLinearGradient(x, y * fontSize - fontSize * 5, x, y * fontSize);
-          gradient.addColorStop(0, 'rgba(0,255,209,0.1)');
-          gradient.addColorStop(0.5, 'rgba(0,255,209,0.7)');
-          gradient.addColorStop(1, 'rgba(0,255,209,1)');
-          
-          ctx.fillStyle = gradient;
-          ctx.font = 'bold ' + fontSize + 'px monospace';
-          
-          // Carácter principal brillante
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = 'rgba(0,255,209,0.8)';
-          ctx.fillText(text, x, y * fontSize);
-          
-          // Trail de caracteres anteriores (más tenue)
-          for(let j = 1; j < 8; j++){
-            const trailY = y - j;
-            if(trailY > 0){
-              const alpha = 1 - (j * 0.15);
-              ctx.fillStyle = `rgba(0,255,209,${alpha * 0.4})`;
-              ctx.shadowBlur = 2;
-              const trailChar = chars[Math.floor(Math.random() * chars.length)];
-              ctx.fillText(trailChar, x, trailY * fontSize);
-            }
-          }
-          
-          ctx.shadowBlur = 0;
-          
-          // Reset cuando llega al final
-          if(y * fontSize > h && Math.random() > 0.975){
-            drops[i] = 0;
-            speeds[i] = Math.random() * 0.5 + 0.5;
-          } else {
-            drops[i] = y + speeds[i];
-          }
-        });
-        
-        requestAnimationFrame(draw);
-      }
-      
-      draw();
-    })();
-
-    // ============================================
-    // SKILLS BARS ANIMATION
-    // ============================================
-    window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('year').textContent = new Date().getFullYear();
-      
-      // Intersection Observer for skill bars
-      const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            const skill = entry.target;
-            const bar = skill.querySelector('.bar i');
-            const pct = parseInt(skill.getAttribute('data-pct') || '0');
-            
-            if(bar){
-              setTimeout(() => {
-                bar.style.width = pct + '%';
-              }, 200);
-            }
-            
-            const span = skill.querySelector('.pct');
-            if(span){
-              let current = 0;
-              const increment = pct / 60;
-              const counter = setInterval(() => {
-                current += increment;
-                if(current >= pct){
-                  current = pct;
-                  clearInterval(counter);
-                }
-                span.textContent = Math.floor(current) + '%';
-              }, 20);
-            }
-            
-            skillObserver.unobserve(skill);
-          }
-        });
-      }, { threshold: 0.5 });
-      
-      document.querySelectorAll('.skill').forEach(skill => {
-        skillObserver.observe(skill);
-      });
-
-      // Card animation on scroll
-      const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.6s ease';
-        cardObserver.observe(card);
-      });
-    });
-
-    // ============================================
-    // SMOOTH SCROLL FOR ANCHOR LINKS
-    // ============================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollIndicator.style.width = pct + '%';
     });
   </script>
 </body>
