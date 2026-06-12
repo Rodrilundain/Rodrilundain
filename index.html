@@ -297,9 +297,10 @@
     .scroll-indicator{ position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); z-index: 9999; transition: width .1s; }
 
     /* RESPONSIVE */
+    /* ── TABLET ── */
     @media (max-width: 900px){
       .grid{ grid-template-columns: 1fr; }
-      .hero{ flex-direction: column; text-align: center; }
+      .hero{ flex-direction: column; text-align: center; padding: 28px 24px; }
       .hero-right{ order: -1; }
       .avatar{ width: 150px; height: 150px; }
       .chips{ justify-content: center; }
@@ -307,15 +308,90 @@
       .btn-row{ justify-content: center; }
     }
 
+    /* ── MOBILE ── */
     @media (max-width: 520px){
-      h1 { font-size: 1.8rem; }
-      .wrap{ padding:16px; }
-      .avatar{ width:130px; height:130px; }
-      .chip{ padding:8px 14px; font-size: 0.85rem; }
-      .card{ padding: 20px; }
+      /* Tipografía */
+      h1 { font-size: 1.6rem; line-height: 1.2; }
+      .hero-subtitle { font-size: 0.95rem; }
+      .hero-tagline { font-size: 0.88rem; }
+
+      /* Layout */
+      .wrap{ padding: 12px; }
+      .hero{ padding: 20px 16px; gap: 16px; border-radius: 12px; }
+      .avatar{ width: 110px; height: 110px; }
+      .card{ padding: 16px; border-radius: 12px; margin-bottom: 16px; }
+
+      /* Chips — más pequeños y compactos */
+      .chip{ padding: 5px 12px; font-size: 0.78rem; }
+
+      /* Contacto — stack vertical en pantallas muy chicas */
+      .contact-row{ flex-direction: column; align-items: center; gap: 6px; font-size: 0.82rem; }
+
+      /* Botones — full width en mobile */
+      .btn-row{ flex-direction: column; }
+      .btn{ justify-content: center; width: 100%; }
+
+      /* Timeline — menos padding lateral */
+      .timeline > li{ padding-left: 20px; margin-bottom: 24px; }
+      .tl-company{ font-size: 0.92rem; }
+      .tl-role{ font-size: 0.88rem; }
+      .tl-desc{ font-size: 0.84rem; }
+      .tl-list{ padding-left: 12px; }
+      .tl-list li{ font-size: 0.82rem; }
+
+      /* Skills — label wrappable */
+      .skill-label{ font-size: 0.8rem; flex-wrap: wrap; gap: 2px; }
+      .skill-label span:last-child{ margin-left: auto; }
+
+      /* Proyectos */
+      .proj{ padding: 14px; }
+      .proj-title{ font-size: 0.88rem; }
+      .proj-desc{ font-size: 0.8rem; }
+      .tag{ font-size: 0.7rem; padding: 2px 8px; }
+
+      /* Certificaciones grid — 1 columna en mobile */
+      .cert-card-big{ padding: 10px; gap: 8px; }
+      .cert-icon-big{ font-size: 1.1rem; }
+      .cert-card-big strong{ font-size: 0.82rem; }
+
+      /* Sidebar quick info */
+      .quick-item{ gap: 10px; }
+      .quick-text strong{ font-size: 0.85rem; }
+      .quick-text span{ font-size: 0.78rem; }
+
+      /* Referencias */
+      .ref-name{ font-size: 0.85rem; }
+
+      /* Ocultar scrollbar en mobile (estético) */
+      ::-webkit-scrollbar{ width: 4px; }
+
+      /* Sección certificaciones — quitar doble padding */
+      section.wrap{ padding: 0 12px 12px; }
     }
 
-    ::-webkit-scrollbar { width: 10px; }
+    /* ── MOBILE MUY CHICO (360px) ── */
+    @media (max-width: 380px){
+      h1{ font-size: 1.35rem; }
+      .chips{ gap: 5px; }
+      .chip{ font-size: 0.72rem; padding: 4px 10px; }
+      /* Cert grid forzado a 1 columna */
+      section.wrap > .card > div[style*="grid"]{
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* CERTS GRID */
+    .certs-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 520px){
+      .certs-grid{ grid-template-columns: 1fr; gap: 10px; }
+    }
+
+    
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: rgba(0,255,209,.3); border-radius: 999px; }
 
@@ -555,7 +631,7 @@
     <section class="wrap" style="margin-top:0">
       <div class="card" style="margin-bottom:0">
         <h2>🏆 Certificaciones</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px">
+        <div class="certs-grid">
           <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1765500902176/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🤖</div><div><strong>N8N Automation</strong><div style="color:var(--muted);font-size:0.8em">Curso Completo N8N: Domina la Automatizacion con IA (2024)</div></div></a>
           <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1763959825551/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🖥</div><div><strong>Frontend con Python</strong><div style="color:var(--muted);font-size:0.8em">EcoSistema Tech (2025)</div></div></a>
           <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/overlay/1734662384780/single-media-viewer/?profileId=ACoAABiDcioBZWxZIZhrYXA8pohcN3DQVHOzD3Y" target="_blank" class="cert-card-big"><div class="cert-icon-big">🌐</div><div><strong>HTML, CSS, JavaScript</strong><div style="color:var(--muted);font-size:0.8em">Instituto EGG (2024)</div></div></a>
