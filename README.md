@@ -110,6 +110,16 @@ Fundamentos introductorios a la programación, flujo con JavaScript, manipulaci�
 
 Fundamentos introductorios a la programación con Python, flujo con Python, strings y listas, ciclos y ciclos anidados, recorrido de listas, problemas de listas, mutabilidad y tuplas, listas anidadas y diccionarios, fundamentos de funciones y alcance, y listas por comprensión.
 
+### 🖥️ Frontend con Python — EcoSistema Tech
+*2025*
+
+Certificación en desarrollo frontend aplicando Python.
+
+### 📊 Introducción al Análisis de Datos con Python — iDesarrollo
+*2025*
+
+Certificación en fundamentos de análisis de datos con Python.
+
 ---
 
 ## 📈 GitHub Stats
