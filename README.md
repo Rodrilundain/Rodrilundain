@@ -105,6 +105,11 @@ Dashboards y reportes automáticos integrando múltiples fuentes de datos con Po
 
 Fundamentos introductorios a la programación, flujo con JavaScript, manipulación de strings, arreglos y ciclos, objetos literales, fundamentos de funciones, alcance y mutabilidad, y operaciones `map`, `filter` y `reduce`.
 
+### 🐍 Python Interactivo — Academia Desafío Latam
+*Desafío Latam · agosto 2026*
+
+Fundamentos introductorios a la programación con Python, flujo con Python, strings y listas, ciclos y ciclos anidados, recorrido de listas, problemas de listas, mutabilidad y tuplas, listas anidadas y diccionarios, fundamentos de funciones y alcance, y listas por comprensión.
+
 ---
 
 ## 📈 GitHub Stats
