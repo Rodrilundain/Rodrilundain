@@ -44,6 +44,7 @@ Trabajo integrando datos, APIs y herramientas digitales para crear **dashboards,
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
 
 ### Integraciones & APIs
 ![REST API](https://img.shields.io/badge/REST%20API-009688?style=flat-square&logoColor=white)
@@ -104,6 +105,11 @@ Dashboards y reportes automáticos integrando múltiples fuentes de datos con Po
 *Certificado Nº 69990 · agosto 2026*
 
 Fundamentos introductorios a la programación, flujo con JavaScript, manipulación de strings, arreglos y ciclos, objetos literales, fundamentos de funciones, alcance y mutabilidad, y operaciones `map`, `filter` y `reduce`.
+
+### 🗄️ SQL Interactivo — Academia Desafío Latam
+*Desafío Latam · agosto 2026*
+
+Fundamentos de bases de datos relacionales y SQL: consultas SELECT, filtrado con WHERE, ordenamiento, funciones de agregación, agrupación con GROUP BY, relaciones entre tablas y JOINs para consultar, filtrar, relacionar y analizar datos.
 
 ### 🐍 Python Interactivo — Academia Desafío Latam
 *Desafío Latam · agosto 2026*
