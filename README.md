@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/rodrigo-ilundain-122896b5/" target="_blank">
+  <a href="https://www.linkedin.com/in/rodrigo-ilundain/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="mailto:rodrilundain@gmail.com">
@@ -101,6 +101,36 @@ Dashboards y reportes automáticos integrando múltiples fuentes de datos con Po
 
 ## 📜 Certificaciones
 
+### 🔁 N8N Automation — Curso Completo N8N
+*2024*
+
+Curso completo de automatización con inteligencia artificial usando n8n.
+
+### 🌐 HTML, CSS y JavaScript — Instituto EGG
+*2024*
+
+Certificación en fundamentos de desarrollo web: HTML, CSS y JavaScript.
+
+### 🐍 Python para Datos — Academia Latam
+*2024*
+
+Certificación en Python aplicado al análisis de datos.
+
+### 🤖 IA para la Productividad — INEFOP
+*2024*
+
+Certificación en uso de inteligencia artificial para la productividad.
+
+### 📊 Marketing Digital — Fundación Telefónica
+*2023*
+
+Certificación en fundamentos de marketing digital.
+
+### 📈 Introducción a Power BI — Fundación Telefónica
+*2023*
+
+Certificación en fundamentos de Power BI.
+
 ### 🟨 JavaScript Interactivo — Academia Desafío Latam
 *Certificado Nº 69990 · agosto 2026*
 
@@ -141,7 +171,7 @@ Certificación en fundamentos de análisis de datos con Python.
 
 - 📧 **Email:** rodrilundain@gmail.com
 - 📱 **Teléfono:** 091 318 211
-- 💼 **LinkedIn:** [linkedin.com/in/rodrigo-ilundain-122896b5](https://www.linkedin.com/in/rodrigo-ilundain-122896b5/)
+- 💼 **LinkedIn:** [linkedin.com/in/rodrigo-ilundain](https://www.linkedin.com/in/rodrigo-ilundain/)
 - 📍 **Ubicación:** Montevideo, Uruguay
 
 ---
