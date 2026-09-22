@@ -1,18 +1,18 @@
 <h1 align="center">Hola, soy Rodrigo Ilundain 👋</h1>
 
 <p align="center">
-  <strong>Data Analyst & Automation Developer</strong><br>
-  Convirtiendo procesos manuales en sistemas automatizados que trabajan solos
+<strong>Data Analyst & Automation Developer</strong><br>
+Convirtiendo procesos manuales en sistemas automatizados que trabajan solos
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/rodrigo-ilundain/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="mailto:rodrilundain@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
-  </a>
-  <img src="https://img.shields.io/badge/Ubicaci%C3%B3n-Montevideo%2C%20Uruguay-blue?style=for-the-badge" alt="Ubicación"/>
+<a href="https://www.linkedin.com/in/rodrigo-ilundain/" target="_blank">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+</a>
+<a href="mailto:rodrilundain@gmail.com">
+<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
+</a>
+<img src="https://img.shields.io/badge/Ubicaci%C3%B3n-Montevideo%2C%20Uruguay-blue?style=for-the-badge" alt="Ubicación"/>
 </p>
 
 ---
@@ -69,6 +69,10 @@ Trabajo integrando datos, APIs y herramientas digitales para crear **dashboards,
 ### 🤝 Coordinador de Ventas y CRM — Grupo Fiancar
 *jul. 2024 – nov. 2025 | Uruguay*
 
+- Implementación de sistema web de tickets que redujo tiempos de resolución de reclamos
+- Automatización de solicitudes con Google Apps Script y Zapier para flujos sin fricción
+- Integración de formularios y CRM para reportería automatizada
+
 ### 💡 Coordinador de Transformación Digital — Avanza Externalización de Servicios
 *ago. 2022 – jul. 2024 | Montevideo, Uruguay*
 
@@ -81,6 +85,18 @@ Trabajo integrando datos, APIs y herramientas digitales para crear **dashboards,
 ---
 
 ## 🚀 Proyectos Destacados
+
+### 🔦 FARO — Alerta Temprana de Bienestar Estudiantil
+Sistema para escuelas y liceos que procesa check-ins emocionales de estudiantes y genera un tablero de riesgo (semáforo) para ayudar a psicólogos y asistentes sociales a priorizar a quién acompañar. Pipeline en Python y la misma lógica reescrita en JavaScript para correr en el navegador, validada para dar resultados idénticos. Herramienta de apoyo, no de diagnóstico.
+
+**Stack:** Python · JavaScript · MySQL · Pandas
+
+🔗 [Ver repositorio](https://github.com/Rodrilundain/Faro)
+
+### 🤖 Atajos para IA
+Recopilación abierta de atajos y comandos para trabajar más rápido con herramientas de inteligencia artificial: generación de imágenes, productividad y creación de contenido.
+
+🔗 [Ver repositorio](https://github.com/Rodrilundain/atajos-para-la-ia)
 
 ### 🤖 Bot de Atención al Cliente con IA
 Bot inteligente capaz de atender consultas, interpretar mensajes, gestionar conversaciones y escalar la atención de manera automática via WhatsApp.
@@ -161,8 +177,8 @@ Certificación en fundamentos de análisis de datos con Python.
 ## 📈 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Rodrilundain&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rodrilundain&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
+<img src="https://github-readme-stats.vercel.app/api?username=Rodrilundain&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rodrilundain&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
 </p>
 
 ---
@@ -170,12 +186,11 @@ Certificación en fundamentos de análisis de datos con Python.
 ## 📫 Contacto
 
 - 📧 **Email:** rodrilundain@gmail.com
-- 📱 **Teléfono:** 091 318 211
 - 💼 **LinkedIn:** [linkedin.com/in/rodrigo-ilundain](https://www.linkedin.com/in/rodrigo-ilundain/)
 - 📍 **Ubicación:** Montevideo, Uruguay
 
 ---
 
 <p align="center">
-  <em>"Automatizar no es ejecutar más rápido. Es diseñar mejor."</em>
+<em>"Automatizar no es ejecutar más rápido. Es diseñar mejor."</em>
 </p>
