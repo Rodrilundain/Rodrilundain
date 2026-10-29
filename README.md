@@ -23,6 +23,8 @@ Más de 7 años en entornos empresariales y 2 años especializándome en **data,
 
 Trabajo integrando datos, APIs y herramientas digitales para crear **dashboards, automatizaciones y soluciones** que simplifican el trabajo de equipos completos. Actualmente en **Meditian S.A.** como Data Analyst & Automation Developer.
 
+Además soy fundador de **[link](https://link-automatizaciones.netlify.app)** 🔗, donde automatizo las tareas repetitivas de emprendedores y empresas.
+
 ---
 
 ## 🛠️ Stack Tecnológico
@@ -55,6 +57,13 @@ Trabajo integrando datos, APIs y herramientas digitales para crear **dashboards,
 ---
 
 ## 💼 Experiencia Profesional
+
+### 🔗 Fundador — link
+*2026 – actualidad | Montevideo, Uruguay*
+
+- Automatizaciones a medida para emprendedores y empresas: reportes, agendas y portales de solicitudes
+- Bots de WhatsApp para atención y gestión de turnos
+- Web: [link-automatizaciones.netlify.app](https://link-automatizaciones.netlify.app)
 
 ### 📊 Data Analyst & Automation Developer — Meditian S.A.
 *nov. 2025 – actualidad | Montevideo, Uruguay*
