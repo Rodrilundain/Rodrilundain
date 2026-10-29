@@ -86,6 +86,11 @@ Trabajo integrando datos, APIs y herramientas digitales para crear **dashboards,
 
 ## 🚀 Proyectos Destacados
 
+### 🔗 link — Automatizaciones para negocios
+Mi emprendimiento propio: automatizo las tareas repetitivas de emprendedores y empresas — reportes, agendas, bots de WhatsApp y portales de solicitudes. *Automatizamos con criterio.*
+
+🌐 [Ver web](https://link-automatizaciones.netlify.app) · 📸 [Instagram](https://www.instagram.com/link_digital_/)
+
 ### 🔦 FARO — Alerta Temprana de Bienestar Estudiantil
 Sistema para escuelas y liceos que procesa check-ins emocionales de estudiantes y genera un tablero de riesgo (semáforo) para ayudar a psicólogos y asistentes sociales a priorizar a quién acompañar. Pipeline en Python y la misma lógica reescrita en JavaScript para correr en el navegador, validada para dar resultados idénticos. Herramienta de apoyo, no de diagnóstico.
 
